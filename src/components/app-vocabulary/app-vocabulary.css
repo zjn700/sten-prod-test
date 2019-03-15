@@ -1,0 +1,69 @@
+.h2 {
+    padding: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4.5rem;
+    font-weight: bolder;
+  }
+
+div.card {
+    position: relative;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    margin-bottom: 2rem;
+    float: right;
+  }
+  
+  div.header {
+    background-color: #4CAF50;
+     /* #4CAF50; */
+    width: 100%;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    font-size: 40px;
+  }
+  
+  div.container {
+    padding: 10px;
+  }
+  
+  .filter-white {
+    position: absolute;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(106%) contrast(101%);
+  }
+
+  slot-left {
+    position: absolute;
+    top:.5rem;
+    left:.25rem;
+    background-color:red;
+    float: left;
+  }
+
+  
+
+.footer-vocabulary{
+    z-index: 100;
+    background-color: white;
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    height: 2.5em;
+    width: 100%;
+    /* border-top: 1px solid #CCC; */
+  }
+
+ .footer-vocabulary .tab {
+    cursor: pointer;
+    float: left;
+    fill:white;
+    width: 50%;
+    text-align: center;
+    border-right: 1px solid #cccccc ;
+    border-top-right-radius: 15px;
+}
+
+.tab:last-child {
+    border-right: unset;
+  }

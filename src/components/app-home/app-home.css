@@ -1,0 +1,168 @@
+.app-home {
+  padding: 10px;
+}
+
+.main-container {
+  margin-top: 3rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 4rem;
+
+}
+
+.left-column {
+  /* position: fixed; */
+  width: 15rem;
+}
+
+.h2 {
+  padding: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 4.5rem;
+  font-weight: bolder;
+}
+
+button {
+  background: #5851ff;
+  color: white;
+  margin: 8px;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 16px 20px;
+  border-radius: 2px;
+  box-shadow: 0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);
+  outline: 0;
+  letter-spacing: .04em;
+  transition: all .15s ease;
+  cursor: pointer;
+}
+  
+button:hover {
+  box-shadow: 0 3px 6px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.1);
+  transform: translateY(1px);
+}
+
+app-vocabulary {
+  width: 100%;
+  position: relative;
+  float: right;
+}
+/*
+.slot-left {
+  position: absolute;
+  top:.5rem;
+  left:.25rem;
+
+  float: left;
+}
+
+div.card {
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  float: right;
+}
+
+div.header {
+  background-color: #4CAF50;
+  width: 100%;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 40px;
+}
+
+div.container {
+  padding: 10px;
+}
+
+.filter-white {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(106%) contrast(101%);
+}
+*/
+@media (min-width:20em)  { /* iphone 5/SE */ 
+  #loading ion-img {
+      left:33%;
+  }
+  .main-container {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  div.card {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (min-width:22em)  { /* galaxy s5 */ 
+  #loading ion-img {
+      left: 35%;
+  }
+
+}
+
+@media (min-width:23em)  { /* iphone 6/7/8 */ 
+  #loading ion-img {
+      left:8.5em;
+      /* background-color: red; */
+
+  }
+}
+
+@media (min-width:24em)  { /* pixel 2, iphone 6/7/8 plus */ 
+  #loading ion-img {
+      left:9.5em;
+      /* background-color: blue; */
+
+  }
+}
+
+@media (min-width:48em)  { /* ipad and higher*/ 
+  #loading ion-img {
+      left:43%;
+  }
+  .modal {
+      width: 50%;
+  }
+  app-vocabulary {
+    width: 45%;
+margin-left: 2rem;
+  }
+
+  div.card {
+    width: 45%;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
+@media (min-width:64em)  { /* ipad pro  */ 
+  #loading ion-img {
+      left:45%;
+  }   
+}
+
+/* Grow */
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+  transform: scale(1.1);
+}
