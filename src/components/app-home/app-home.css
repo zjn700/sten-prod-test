@@ -2,11 +2,12 @@
   padding: 10px;
 }
 
+
 .main-container {
-  margin-top: 3rem;
+  margin-top: 1rem;
   margin-left: 2rem;
   margin-right: 2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
 
 }
 
@@ -49,14 +50,14 @@ app-vocabulary {
   position: relative;
   float: right;
 }
-/*
+
 .slot-left {
   position: absolute;
   top:.5rem;
   left:.25rem;
-
   float: left;
 }
+/*
 
 div.card {
   position: relative;
@@ -90,6 +91,8 @@ div.container {
       left:33%;
   }
   .main-container {
+    margin-top: 3rem;
+    /* width: 92%; */
     width: 100%;
     margin-left: 0;
     margin-right: 0;
@@ -132,7 +135,7 @@ div.container {
       width: 50%;
   }
   app-vocabulary {
-    width: 45%;
+    /* width: 45%; */
 margin-left: 2rem;
   }
 

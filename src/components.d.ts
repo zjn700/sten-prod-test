@@ -20,13 +20,11 @@ export namespace Components {
     'cancelIcon': string;
     'friends': any;
     'moreIcon': string;
-    'vocabulary': any;
   }
   interface AppHomeAttributes extends StencilHTMLAttributes {
     'cancelIcon'?: string;
     'friends'?: any;
     'moreIcon'?: string;
-    'vocabulary'?: any;
   }
 
   interface AppProfile {
@@ -36,18 +34,55 @@ export namespace Components {
     'match'?: MatchResults;
   }
 
-  interface AppRoot {}
-  interface AppRootAttributes extends StencilHTMLAttributes {}
+  interface AppRoot {
+    'homeIcon': string;
+    'profileIcon': string;
+  }
+  interface AppRootAttributes extends StencilHTMLAttributes {
+    'homeIcon'?: string;
+    'profileIcon'?: string;
+  }
+
+  interface AppVocabularyCard {
+    'cancelIcon': string;
+    'chatIcon': string;
+    'commentIcon': string;
+    'item': any;
+    'moreIcon': string;
+    'noteIcon': string;
+    'playIcon': string;
+    'searchIcon': string;
+    'shareIcon': string;
+  }
+  interface AppVocabularyCardAttributes extends StencilHTMLAttributes {
+    'cancelIcon'?: string;
+    'chatIcon'?: string;
+    'commentIcon'?: string;
+    'item'?: any;
+    'moreIcon'?: string;
+    'noteIcon'?: string;
+    'playIcon'?: string;
+    'searchIcon'?: string;
+    'shareIcon'?: string;
+  }
 
   interface AppVocabulary {
     'cancelIcon': string;
+    'hideMenuBars': boolean;
     'item': any;
     'moreIcon': string;
+    'nextLesson': string;
+    'prevLesson': string;
+    'vocabulary': any;
   }
   interface AppVocabularyAttributes extends StencilHTMLAttributes {
     'cancelIcon'?: string;
+    'hideMenuBars'?: boolean;
     'item'?: any;
     'moreIcon'?: string;
+    'nextLesson'?: string;
+    'prevLesson'?: string;
+    'vocabulary'?: any;
   }
 }
 
@@ -56,6 +91,7 @@ declare global {
     'AppHome': Components.AppHome;
     'AppProfile': Components.AppProfile;
     'AppRoot': Components.AppRoot;
+    'AppVocabularyCard': Components.AppVocabularyCard;
     'AppVocabulary': Components.AppVocabulary;
   }
 
@@ -63,6 +99,7 @@ declare global {
     'app-home': Components.AppHomeAttributes;
     'app-profile': Components.AppProfileAttributes;
     'app-root': Components.AppRootAttributes;
+    'app-vocabulary-card': Components.AppVocabularyCardAttributes;
     'app-vocabulary': Components.AppVocabularyAttributes;
   }
 
@@ -85,6 +122,12 @@ declare global {
     new (): HTMLAppRootElement;
   };
 
+  interface HTMLAppVocabularyCardElement extends Components.AppVocabularyCard, HTMLStencilElement {}
+  var HTMLAppVocabularyCardElement: {
+    prototype: HTMLAppVocabularyCardElement;
+    new (): HTMLAppVocabularyCardElement;
+  };
+
   interface HTMLAppVocabularyElement extends Components.AppVocabulary, HTMLStencilElement {}
   var HTMLAppVocabularyElement: {
     prototype: HTMLAppVocabularyElement;
@@ -95,6 +138,7 @@ declare global {
     'app-home': HTMLAppHomeElement
     'app-profile': HTMLAppProfileElement
     'app-root': HTMLAppRootElement
+    'app-vocabulary-card': HTMLAppVocabularyCardElement
     'app-vocabulary': HTMLAppVocabularyElement
   }
 
@@ -102,6 +146,7 @@ declare global {
     'app-home': HTMLAppHomeElement;
     'app-profile': HTMLAppProfileElement;
     'app-root': HTMLAppRootElement;
+    'app-vocabulary-card': HTMLAppVocabularyCardElement;
     'app-vocabulary': HTMLAppVocabularyElement;
   }
 

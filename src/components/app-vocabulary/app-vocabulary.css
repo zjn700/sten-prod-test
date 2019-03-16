@@ -11,10 +11,11 @@ div.card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
     margin-bottom: 2rem;
-    float: right;
+    float: left;
   }
   
   div.header {
+    position:relative;
     background-color: #4CAF50;
      /* #4CAF50; */
     width: 100%;
@@ -23,7 +24,7 @@ div.card {
     padding-bottom: 30px;
     font-size: 40px;
   }
-  
+
   div.container {
     padding: 10px;
   }
@@ -33,18 +34,90 @@ div.card {
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(106%) contrast(101%);
   }
 
-  slot-left {
+  .slot-left {
     position: absolute;
-    top:.5rem;
-    left:.25rem;
-    background-color:red;
-    float: left;
+    top:.1rem;
+    left:0;
+    /* margin-top:1rem; */
+    width: 3rem;
+    padding:0;
+    background-color:dimgray;
+    opacity: .75;
+    cursor:pointer;
+    }
+
+  .slot-right {
+    position: absolute;
+    top:.15rem;
+    right:0;
+    width: 3rem;
+    padding:0;
+    background-color:dimgray;
+    opacity: .75;
+    cursor:pointer;
   }
 
+  .lesson-title {
+    font-size:1.5rem;
+    padding:.1rem;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    /* padding: 16px 20px; */
+    /* border-radius: 2px; */
+    /* box-shadow: 0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08); */
+    outline: 0;
+    letter-spacing: .04em;
+    transition: all .15s ease;
+    cursor: pointer;
+  }
+
+/* top right bottom left */
+  .sub-header-menu {
+    display: block;
+    position: fixed;
+    /* width: 92%; */
+    width: 100%;
+    top: 3.5rem;
+    left: 0;
+    padding:.5rem 0 .5rem 0;
+    text-align: center;
+    background-color: rgb(218, 218, 218);
+    z-index: 2;
+
+  }
+
+button {
+  /* background: #5851ff; */
+  /* color: white; */
+  padding:1.5rem;
+  border: none;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  /* padding: 16px 20px; */
+  border-radius: 2px;
+  box-shadow: 0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);
+  outline: 0;
+  letter-spacing: .04em;
+  transition: all .15s ease;
+  cursor: pointer;
+}
   
+button:hover {
+  box-shadow: 0 3px 6px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.1);
+  transform: translateY(1px);
+}
+  .hidden {
+    display: none;
+    /* background-color: red; */
+ }
+ 
 
 .footer-vocabulary{
     z-index: 100;
+    width: 100%;
     background-color: white;
     position: fixed;
     bottom: 0px;
@@ -58,12 +131,62 @@ div.card {
     cursor: pointer;
     float: left;
     fill:white;
-    width: 50%;
+    width: 24.5%;
     text-align: center;
     border-right: 1px solid #cccccc ;
     border-top-right-radius: 15px;
+    float: left;
+    padding-top:1rem;
 }
 
 .tab:last-child {
     border-right: unset;
   }
+
+
+
+
+
+
+  @media (min-width:20em)  { /* iphone 5/SE */ 
+    #loading ion-img {
+        left:33%;
+    }
+    .main-container {
+      margin-top: 3rem;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    div.card {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  
+  @media (min-width:22em)  { /* galaxy s5 */ 
+    #loading ion-img {
+        left: 35%;
+    }
+  
+  }
+  
+  @media (min-width:23em)  { /* iphone 6/7/8 */ 
+    #loading ion-img {
+        left:8.5em;
+        /* background-color: red; */
+  
+    }
+  }
+  
+  @media (min-width:24em)  { /* pixel 2, iphone 6/7/8 plus */ 
+    #loading ion-img {
+        left:9.5em;
+        /* background-color: blue; */
+  
+    }
+  }
+  
+ 
+  

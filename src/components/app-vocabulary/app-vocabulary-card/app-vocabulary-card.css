@@ -1,0 +1,104 @@
+.main-container {
+  margin-top: 3rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+
+}
+
+.h2 {
+    padding: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4.5rem;
+    font-weight: bolder;
+  }
+
+div.card {
+    position: relative;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    margin-bottom: 2rem;
+    float: left;
+  }
+  
+  div.header {
+    position: relative;
+    background-color: #4CAF50;
+     /* #4CAF50; */
+    width: 100%;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    font-size: 40px;
+  }
+  
+  .app-option-bar {
+    position:absolute;
+    bottom: .5rem;
+    width: 100%;
+  }
+
+  div.container {
+    padding: 10px;
+  }
+  
+  .filter-white {
+    position: absolute;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(106%) contrast(101%);
+  }
+
+  .slot-left {
+    position: absolute;
+    top:.5rem;
+    left:.25rem;
+    float: left;
+    z-index: 1;
+  }
+
+.footer-vocabulary{
+    z-index: 100;
+    background-color: white;
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    height: 2.5em;
+    width: 100%;
+    /* border-top: 1px solid #CCC; */
+  }
+
+ .footer-vocabulary .tab, .app-option-bar .tab {
+   position: relative;
+    cursor: pointer;
+    float: left;
+    fill:white;
+    width: 24.5%;
+    text-align: center;
+    border-right: 1px solid #cccccc ;
+    border-top-right-radius: 15px;
+    display: inherit;
+}
+
+/* .tab:last-child {
+    border-right: unset;
+  } */
+
+   /* ipad and higher*/ 
+  /* @media (min-width:48em)  {
+    div.card {
+      width: 42%;
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+  } */
+
+   /* ipad and higher*/
+  @media (min-width:64em)  { 
+  
+    div.card {
+      width: 42%;
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+  }
+  
