@@ -10,7 +10,7 @@ export const config: Config = {
       type: 'www',
       serviceWorker: {
         globPatterns: [
-          '**/*.{js,css,json,html,ico,png,svg}'
+          '**/*.{js,css,json,html,ico,png,svg,m4a}'
         ]
       }
       // uncomment the following line to disable service workers in production

@@ -1,4 +1,4 @@
-import { Component, State, Prop } from '@stencil/core';
+import { Component, Prop } from '@stencil/core';
 import { wordList } from "../../assets/data/vocabulary"
 
 @Component({
@@ -8,23 +8,20 @@ import { wordList } from "../../assets/data/vocabulary"
 })
 
 export class AppVocabulary {
+
     @Prop() vocabulary: any = wordList;
 
     @Prop({ mutable: true }) item: any;
-    @State() showMoreIcon: boolean = true;
+    @Prop({ mutable: true }) hideMenuBars: boolean = false;
+
     @Prop() cancelIcon = "assets/svg/outline-cancel-24px.svg"
     @Prop() moreIcon = "assets/svg/baseline-more_vert-24px.svg"
     @Prop() nextLesson = "assets/svg/baseline-chevron_right-24px.svg"
     @Prop() prevLesson = "assets/svg/baseline-chevron_left-24px.svg"
 
-    @Prop({ mutable: true }) hideMenuBars: boolean = false;
-
     async toggleMoreMenu(event) {
         console.log("event vocab", event)
-        this.showMoreIcon = !this.showMoreIcon
     }
-
-
 
     render() {
         return ([
@@ -40,13 +37,17 @@ export class AppVocabulary {
             </div>,
 
             <div class="main-container" >
-                {this.vocabulary.map((item) =>
-                    <app-vocabulary-card item={item}></app-vocabulary-card>,
+                {this.vocabulary.map((item, index) =>
+                    <app-vocabulary-card
+                        item={item}
+                        index={index}
+                        hideMenuBars={this.hideMenuBars}>
+                    </app-vocabulary-card>,
                 )}
             </div>,
 
             <div class={this.hideMenuBars ? "hidden" : "footer-vocabulary"}>
-                <div class={this.hideMenuBars ? "hidden" : "tab"}>Words</div>
+                <div class="tab active" >Words</div>
                 <div class="tab">Phrases</div>
                 <div class="tab">Grammar</div>
                 <div class="tab">Exercises</div>

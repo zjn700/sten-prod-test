@@ -16,16 +16,8 @@ import {
 
 export namespace Components {
 
-  interface AppHome {
-    'cancelIcon': string;
-    'friends': any;
-    'moreIcon': string;
-  }
-  interface AppHomeAttributes extends StencilHTMLAttributes {
-    'cancelIcon'?: string;
-    'friends'?: any;
-    'moreIcon'?: string;
-  }
+  interface AppHome {}
+  interface AppHomeAttributes extends StencilHTMLAttributes {}
 
   interface AppProfile {
     'match': MatchResults;
@@ -47,6 +39,9 @@ export namespace Components {
     'cancelIcon': string;
     'chatIcon': string;
     'commentIcon': string;
+    'currentAudio': HTMLAudioElement;
+    'hideMenuBars': boolean;
+    'index': any;
     'item': any;
     'moreIcon': string;
     'noteIcon': string;
@@ -58,6 +53,9 @@ export namespace Components {
     'cancelIcon'?: string;
     'chatIcon'?: string;
     'commentIcon'?: string;
+    'currentAudio'?: HTMLAudioElement;
+    'hideMenuBars'?: boolean;
+    'index'?: any;
     'item'?: any;
     'moreIcon'?: string;
     'noteIcon'?: string;

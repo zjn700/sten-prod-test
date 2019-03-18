@@ -1,6 +1,13 @@
+.white-out {
+  color: white;
+  /* visibility: "hidden"; */
+}
+
 .app-home {
   padding: 10px;
 }
+
+
 
 
 .main-container {
@@ -21,6 +28,7 @@
   padding-top: 4rem;
   padding-bottom: 4.5rem;
   font-weight: bolder;
+  font-size: 2.5rem;
 }
 
 button {

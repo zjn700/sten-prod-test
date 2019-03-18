@@ -7,23 +7,23 @@ import { Component, Prop } from '@stencil/core';
   shadow: true
 })
 export class AppRoot {
-    @Prop() homeIcon = "assets/svg/baseline-home-24px.svg"
-    @Prop() profileIcon = "assets/svg/baseline-person_outline-24px.svg"
+  @Prop() homeIcon = "assets/svg/baseline-home-24px.svg"
+  @Prop() profileIcon = "assets/svg/baseline-person_outline-24px.svg"
 
-    async toggleMoreMenu(event) {
-      console.log("event", event)
-    }
-  
+  async toggleMoreMenu(event) {
+    console.log("event", event)
+  }
+
 
   render() {
     return (
       <div>
         <header>
-          <div class="h1">Hiligaynon</div>
-           <div class="slot-left filter-white" onClick={(event: UIEvent) => this.toggleMoreMenu(event)}>
-                    <img src={this.homeIcon} alt="Home" /></div>
-           <div class="slot-right filter-white" onClick={(event: UIEvent) => this.toggleMoreMenu(event)}>
-                    <img src={this.profileIcon} alt="Profile" /></div>
+          <div class="h1">Ilonggo</div>
+          <div class="slot-left filter-white" onClick={(event: UIEvent) => this.toggleMoreMenu(event)}>
+            <img src={this.homeIcon} alt="Home" /></div>
+          <div class="slot-right filter-white" onClick={(event: UIEvent) => this.toggleMoreMenu(event)}>
+            <img src={this.profileIcon} alt="Profile" /></div>
         </header>
 
         <main>

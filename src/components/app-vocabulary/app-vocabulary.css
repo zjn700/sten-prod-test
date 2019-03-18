@@ -5,6 +5,11 @@
     font-weight: bolder;
   }
 
+  .h3 {
+    padding: 2rem;
+    font-size: 1.5rem;
+  }
+
 div.card {
     position: relative;
     width: 100%;
@@ -28,7 +33,7 @@ div.card {
   div.container {
     padding: 10px;
   }
-  
+ 
   .filter-white {
     position: absolute;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(106%) contrast(101%);
@@ -42,7 +47,7 @@ div.card {
     width: 3rem;
     padding:0;
     background-color:dimgray;
-    opacity: .75;
+    opacity: .65;
     cursor:pointer;
     }
 
@@ -53,7 +58,7 @@ div.card {
     width: 3rem;
     padding:0;
     background-color:dimgray;
-    opacity: .75;
+    opacity: .65;
     cursor:pointer;
   }
 
@@ -83,7 +88,8 @@ div.card {
     left: 0;
     padding:.5rem 0 .5rem 0;
     text-align: center;
-    background-color: rgb(218, 218, 218);
+    /* background-color: rgb(218, 218, 218); */
+    background-color: rgb(229, 229, 229);
     z-index: 2;
 
   }
@@ -109,14 +115,16 @@ button:hover {
   box-shadow: 0 3px 6px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.1);
   transform: translateY(1px);
 }
-  .hidden {
+
+.hidden {
     display: none;
-    /* background-color: red; */
+    /* visibility: hidden */
+
  }
  
 
 .footer-vocabulary{
-    z-index: 100;
+    z-index: 3;
     width: 100%;
     background-color: white;
     position: fixed;
@@ -124,7 +132,13 @@ button:hover {
     left: 0;
     height: 2.5em;
     width: 100%;
-    /* border-top: 1px solid #CCC; */
+    /* padding-top: 1rem; */
+    /* border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem; */
+    /* border-top: 1rem solid #CCC; */
+    border-top-right-radius: 1rem;
+    border-top: .2rem solid #CCC;
+    border-top: 1px solid #CCC;
   }
 
  .footer-vocabulary .tab {
@@ -136,13 +150,22 @@ button:hover {
     border-right: 1px solid #cccccc ;
     border-top-right-radius: 15px;
     float: left;
-    padding-top:1rem;
+    padding-top: .75rem;
+    padding-bottom: 1rem;
 }
 
 .tab:last-child {
-    border-right: unset;
+  border-right: unset;
+    border-top-right-radius: unset;
   }
 
+.tab.active{
+  background-color: #e5e5e575;
+  background-color: #3a433a;
+  color: #4caf50;
+  /* color: hsl(14, 95%, 55%); */
+  font-weight: 700;
+}
 
 
 
