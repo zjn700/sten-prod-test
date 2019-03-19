@@ -35,13 +35,28 @@ export var wordList = [
         "meaning": "hot"
     },
     {
-        "id": "1",
+        "id": "8",
         "word": "malaki",
         "meaning": "large"
     },
     {
-        "id": "1",
+        "id": "9",
+        "word": "buntong-hininga",
+        "meaning": "sigh"
+    },
+    {
+        "id": "10",
         "word": "Diin ang kasilyas? -  Diin ang banyo? - Sa diin ang CR?",
         "meaning": "Where is the toilet?  - Where is the bathroom?"
+    },
+    {
+        "id": "11",
+        "word": "kinakailangan",
+        "meaning": "important"
+    },
+    {
+        "id": "12",
+        "word": "kumukutikutitap",
+        "meaning": "twinkle"
     }
 ]

@@ -138,7 +138,7 @@ button:hover {
     /* border-top: 1rem solid #CCC; */
     border-top-right-radius: 1rem;
     border-top: .2rem solid #CCC;
-    border-top: 1px solid #CCC;
+    border-top: 1px solid #eee;
   }
 
  .footer-vocabulary .tab {

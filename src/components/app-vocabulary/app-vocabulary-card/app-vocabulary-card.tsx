@@ -1,5 +1,5 @@
-import { Component, State, Prop, Element } from '@stencil/core';
-// import { elementInViewport2 } from "../../../global/utilities"
+import { Component, State, Prop, Element, Listen } from '@stencil/core';
+import { elementInViewport2 } from "../../../global/utilities"
 
 @Component({
     tag: 'app-vocabulary-card',
@@ -8,15 +8,44 @@ import { Component, State, Prop, Element } from '@stencil/core';
 })
 
 export class AppVocabularyCard {
-    // @Listen('window:scroll')
-    // async handleScroll() {
-    //     var elem = this.el.shadowRoot.getElementById("card-0");
-    //     if (elem) {
-    //         if (elementInViewport2(elem)) {
-    //             console.log("card yep")
-    //         }
-    //     }
-    // }
+
+    @State() scrollY: any;
+    @Listen('window:scroll')
+    async handleScroll() {
+        let goingUp
+        if (this.scrollY) {
+            if (this.index < 2) {
+                console.log("card down ", this.index, this.scrollY > window.scrollY)
+                console.log("card up ", this.index, this.scrollY < window.scrollY)
+            }
+            goingUp = this.scrollY < window.scrollY
+        }
+        this.scrollY = window.scrollY;
+
+        let elem = this.el.shadowRoot.getElementById("card-" + this.index);
+        let elRec = elem.getBoundingClientRect()
+        if (this.index < 2) {
+            console.log("elRec", this.index, window.innerHeight, window.outerHeight, elRec)
+        }
+        if (elem) {
+            if (elementInViewport2(elem) && goingUp) {
+                console.log("card going up and in view", this.index)
+                if ((elRec.bottom > window.innerHeight) && elRec.top < window.innerHeight / 1.1) {
+
+                    console.log("header", elem.getElementsByClassName("header")[0])
+                    // let header = elem.getElementsByClassName("header")[0] as HTMLElement
+                    // header.style.backgroundColor = "#2196f3"
+
+                    // elem.scrollIntoView({ block: "end", behavior: "auto" });
+                    // elem.scrollIntoView(false);
+                    // alignToTop
+                }
+            }
+            if (elementInViewport2(elem) && !goingUp) {
+                console.log("card going down and in view", this.index)
+            }
+        }
+    }
 
 
     @Element() el: HTMLElement
@@ -47,8 +76,11 @@ export class AppVocabularyCard {
 
     async playAudio() {
         if (this.currentAudio) {
+            // this.currentAudio.muted = true;
             this.currentAudio.pause();
-            console.log('paused')
+            console.log('paused', this.currentAudio.paused)
+
+            // console.log("muted?", this.currentAudio.muted)
         }
 
         console.log("play  audio")
@@ -56,8 +88,10 @@ export class AppVocabularyCard {
         console.log(this.currentAudio.duration)
         this.showAudioControls = true
         this.hideMenuBars = false;
+        // this.currentAudio.muted = this.currentAudio.muted ? false : false
+        // console.log("muted 2?", this.currentAudio.muted)
 
-        await this.currentAudio.play()
+        this.currentAudio.play()
         setTimeout(() => {
             this.showAudioControls = false
         }, (this.currentAudio.duration * 1000) + 500)

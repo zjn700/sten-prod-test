@@ -36,7 +36,7 @@
     padding-top: .25rem;
     padding-bottom: .25rem;
     font-weight: bolder;
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 
 div.card {
@@ -119,14 +119,31 @@ div.card {
     border-right: unset;
   } */
 
+
+  @media (min-width:20em)  { /* iphone 5/SE */ 
+    .h2 { 
+      font-size: 1.75rem;
+    }
+  }
+
+  @media (min-width:23em)  { /* iphone 6/7/8 */ 
+    .h2 {
+    font-size: 2rem;
+    }
+
+  }
+
    /* ipad and higher*/ 
-  /* @media (min-width:48em)  {
-    div.card {
+  @media (min-width:48em)  {
+    .h2 {
+      font-size: 2.5rem;
+      }
+    /* div.card {
       width: 42%;
       margin-left: 2rem;
       margin-right: 2rem;
-    }
-  } */
+    } */
+  }
 
    /* ipad and higher*/
   @media (min-width:64em)  { 

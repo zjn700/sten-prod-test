@@ -18,7 +18,10 @@ export class AppHome {
   async handleScroll() {
     // this.hideCardTabs = true;
     if (this.scrollY) {
-      this.hideMenuBars = this.scrollY < window.scrollY
+      this.hideMenuBars = this.scrollY > window.scrollY
+      if (window.scrollY == 0) {
+        this.hideMenuBars = false
+      }
     }
     this.scrollY = window.scrollY;
   }
