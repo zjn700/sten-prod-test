@@ -16,8 +16,33 @@ import {
 
 export namespace Components {
 
-  interface AppHome {}
-  interface AppHomeAttributes extends StencilHTMLAttributes {}
+  interface AppExercises {}
+  interface AppExercisesAttributes extends StencilHTMLAttributes {}
+
+  interface AppGrammar {}
+  interface AppGrammarAttributes extends StencilHTMLAttributes {}
+
+  interface AppHomeMenu {}
+  interface AppHomeMenuAttributes extends StencilHTMLAttributes {}
+
+  interface AppHomePage {}
+  interface AppHomePageAttributes extends StencilHTMLAttributes {}
+
+  interface AppHome {
+    'exercisesId': string;
+    'grammarId': string;
+    'phrasesId': string;
+    'vocabularyId': string;
+  }
+  interface AppHomeAttributes extends StencilHTMLAttributes {
+    'exercisesId'?: string;
+    'grammarId'?: string;
+    'phrasesId'?: string;
+    'vocabularyId'?: string;
+  }
+
+  interface AppPhrases {}
+  interface AppPhrasesAttributes extends StencilHTMLAttributes {}
 
   interface AppProfile {
     'match': MatchResults;
@@ -86,7 +111,12 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'AppExercises': Components.AppExercises;
+    'AppGrammar': Components.AppGrammar;
+    'AppHomeMenu': Components.AppHomeMenu;
+    'AppHomePage': Components.AppHomePage;
     'AppHome': Components.AppHome;
+    'AppPhrases': Components.AppPhrases;
     'AppProfile': Components.AppProfile;
     'AppRoot': Components.AppRoot;
     'AppVocabularyCard': Components.AppVocabularyCard;
@@ -94,7 +124,12 @@ declare global {
   }
 
   interface StencilIntrinsicElements {
+    'app-exercises': Components.AppExercisesAttributes;
+    'app-grammar': Components.AppGrammarAttributes;
+    'app-home-menu': Components.AppHomeMenuAttributes;
+    'app-home-page': Components.AppHomePageAttributes;
     'app-home': Components.AppHomeAttributes;
+    'app-phrases': Components.AppPhrasesAttributes;
     'app-profile': Components.AppProfileAttributes;
     'app-root': Components.AppRootAttributes;
     'app-vocabulary-card': Components.AppVocabularyCardAttributes;
@@ -102,10 +137,40 @@ declare global {
   }
 
 
+  interface HTMLAppExercisesElement extends Components.AppExercises, HTMLStencilElement {}
+  var HTMLAppExercisesElement: {
+    prototype: HTMLAppExercisesElement;
+    new (): HTMLAppExercisesElement;
+  };
+
+  interface HTMLAppGrammarElement extends Components.AppGrammar, HTMLStencilElement {}
+  var HTMLAppGrammarElement: {
+    prototype: HTMLAppGrammarElement;
+    new (): HTMLAppGrammarElement;
+  };
+
+  interface HTMLAppHomeMenuElement extends Components.AppHomeMenu, HTMLStencilElement {}
+  var HTMLAppHomeMenuElement: {
+    prototype: HTMLAppHomeMenuElement;
+    new (): HTMLAppHomeMenuElement;
+  };
+
+  interface HTMLAppHomePageElement extends Components.AppHomePage, HTMLStencilElement {}
+  var HTMLAppHomePageElement: {
+    prototype: HTMLAppHomePageElement;
+    new (): HTMLAppHomePageElement;
+  };
+
   interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {}
   var HTMLAppHomeElement: {
     prototype: HTMLAppHomeElement;
     new (): HTMLAppHomeElement;
+  };
+
+  interface HTMLAppPhrasesElement extends Components.AppPhrases, HTMLStencilElement {}
+  var HTMLAppPhrasesElement: {
+    prototype: HTMLAppPhrasesElement;
+    new (): HTMLAppPhrasesElement;
   };
 
   interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {}
@@ -133,7 +198,12 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'app-exercises': HTMLAppExercisesElement
+    'app-grammar': HTMLAppGrammarElement
+    'app-home-menu': HTMLAppHomeMenuElement
+    'app-home-page': HTMLAppHomePageElement
     'app-home': HTMLAppHomeElement
+    'app-phrases': HTMLAppPhrasesElement
     'app-profile': HTMLAppProfileElement
     'app-root': HTMLAppRootElement
     'app-vocabulary-card': HTMLAppVocabularyCardElement
@@ -141,7 +211,12 @@ declare global {
   }
 
   interface ElementTagNameMap {
+    'app-exercises': HTMLAppExercisesElement;
+    'app-grammar': HTMLAppGrammarElement;
+    'app-home-menu': HTMLAppHomeMenuElement;
+    'app-home-page': HTMLAppHomePageElement;
     'app-home': HTMLAppHomeElement;
+    'app-phrases': HTMLAppPhrasesElement;
     'app-profile': HTMLAppProfileElement;
     'app-root': HTMLAppRootElement;
     'app-vocabulary-card': HTMLAppVocabularyCardElement;

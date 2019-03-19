@@ -1,0 +1,6 @@
+.section-title {
+    position: absolute;
+    top: 7rem;
+    z-index: 100;
+    color: red;
+}

@@ -20,6 +20,9 @@ export function elementInViewport2(el) {
   );
 }
 
+export function isMobileDevice() {
+  return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+};
 
   // var top = el.offsetTop;
   //   var left = el.offsetLeft;

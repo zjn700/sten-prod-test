@@ -1,5 +1,5 @@
 import { Component, State, Prop, Element, Listen } from '@stencil/core';
-import { elementInViewport2 } from "../../../global/utilities"
+import { elementInViewport2, isMobileDevice } from "../../../global/utilities"
 
 @Component({
     tag: 'app-vocabulary-card',
@@ -47,6 +47,9 @@ export class AppVocabularyCard {
         }
     }
 
+    componentDidLoad() {
+        console.log("mob", isMobileDevice())
+    }
 
     @Element() el: HTMLElement
 

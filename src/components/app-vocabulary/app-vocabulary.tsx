@@ -46,12 +46,12 @@ export class AppVocabulary {
                 )}
             </div>,
 
-            <div class={this.hideMenuBars ? "hidden" : "footer-vocabulary"}>
-                <div class="tab active" >Words</div>
-                <div class="tab">Phrases</div>
-                <div class="tab">Grammar</div>
-                <div class="tab">Exercises</div>
-            </div>
+            // <div class={this.hideMenuBars ? "hidden" : "footer-vocabulary"}>
+            //     <div class="tab active" >Words</div>
+            //     <div class="tab">Phrases</div>
+            //     <div class="tab">Grammar</div>
+            //     <div class="tab">Exercises</div>
+            // </div>
         ]
 
             // <div class="card">
