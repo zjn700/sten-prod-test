@@ -1,0 +1,36 @@
+#vs code
+  curl -L https://go.microsoft.com/fwlink/?LinkID=760868 > vscode.deb sudo apt install ./vscode.deb
+
+
+#nvm
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+  nvm --version
+  node -v
+  nvm install node
+  nvm ls
+
+
+#penguin
+   mkdir dev
+   cd dev/
+   mkdir downloads
+  
+#git clone
+   git clone https://github.com/zjn700/sten-prod-test.git
+   cd sten-prod-test/
+   npm install
+   npm start
+   npm run build
+   cd www/
+   python3 --version
+   python3 -m http.server 5000
+
+
+#bash command history
+   history
+   history > history.txt
+
+
+#update - including vs code
+ sudo apt-get update
+ sudo apt-get upgrade

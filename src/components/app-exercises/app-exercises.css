@@ -1,6 +1,6 @@
 .section-title {
-    position: absolute;
-    top: 5rem;
-    z-index: 100;
-    color: red;
+  position: absolute;
+  top: 2rem;
+  z-index: 100;
+  color: red;
 }

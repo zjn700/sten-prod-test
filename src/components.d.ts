@@ -41,8 +41,19 @@ export namespace Components {
     'vocabularyId'?: string;
   }
 
-  interface AppPhrases {}
-  interface AppPhrasesAttributes extends StencilHTMLAttributes {}
+  interface AppPhrases {
+    'exercisesId': string;
+    'grammarId': string;
+    'phrasesId': string;
+    'vocabularyId': string;
+  }
+  interface AppPhrasesAttributes extends StencilHTMLAttributes {
+    'exercisesId'?: string;
+    'grammarId'?: string;
+    'onFabMenuItemSelected'?: (event: CustomEvent) => void;
+    'phrasesId'?: string;
+    'vocabularyId'?: string;
+  }
 
   interface AppProfile {
     'match': MatchResults;
@@ -65,6 +76,7 @@ export namespace Components {
     'chatIcon': string;
     'commentIcon': string;
     'currentAudio': HTMLAudioElement;
+    'dimBackground': boolean;
     'hideMenuBars': boolean;
     'index': any;
     'item': any;
@@ -79,6 +91,7 @@ export namespace Components {
     'chatIcon'?: string;
     'commentIcon'?: string;
     'currentAudio'?: HTMLAudioElement;
+    'dimBackground'?: boolean;
     'hideMenuBars'?: boolean;
     'index'?: any;
     'item'?: any;
@@ -91,21 +104,27 @@ export namespace Components {
 
   interface AppVocabulary {
     'cancelIcon': string;
+    'dimBackground': boolean;
+    'exercisesId': string;
     'hideMenuBars': boolean;
     'item': any;
     'moreIcon': string;
     'nextLesson': string;
     'prevLesson': string;
     'vocabulary': any;
+    'vocabularyId': string;
   }
   interface AppVocabularyAttributes extends StencilHTMLAttributes {
     'cancelIcon'?: string;
+    'dimBackground'?: boolean;
+    'exercisesId'?: string;
     'hideMenuBars'?: boolean;
     'item'?: any;
     'moreIcon'?: string;
     'nextLesson'?: string;
     'prevLesson'?: string;
     'vocabulary'?: any;
+    'vocabularyId'?: string;
   }
 }
 
