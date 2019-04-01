@@ -1,7 +1,7 @@
 .section-title {
   position: absolute;
   top: 2rem;
-  z-index: 100;
+  /* z-index: 100; */
   color: red;
 }
 .footer-phrases {

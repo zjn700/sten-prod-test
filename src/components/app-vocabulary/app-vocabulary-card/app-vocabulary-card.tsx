@@ -68,6 +68,7 @@ export class AppVocabularyCard {
   @State() showAudioControls: boolean = false;
   @State() stopAudio: boolean = false;
   @State() showMoreIcon: boolean = true;
+
   @Prop() cancelIcon = "assets/svg/outline-cancel-24px.svg";
   @Prop() moreIcon = "assets/svg/baseline-more_vert-24px.svg";
   @Prop() playIcon = "assets/svg/baseline-volume_up-24px.svg";

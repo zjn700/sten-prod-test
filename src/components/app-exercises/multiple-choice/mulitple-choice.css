@@ -1,0 +1,69 @@
+/* .h1 {
+  font-size: 10rem;
+} */
+
+/* h1 {
+  position: absolute;
+  top: 100px;
+  color: #444444;
+} */
+.section-title {
+  width: 100%;
+}
+.main-container {
+  width: 100%;
+}
+.question-card {
+  width: 100%;
+}
+
+.answer {
+  cursor: pointer;
+  float: left;
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  border-bottom: 3px solid white;
+  /* #439946; */
+}
+
+.answer-dimmed {
+  cursor: pointer;
+  float: left;
+  width: 100%;
+  background-color: rgb(250, 248, 248);
+  color: #ddd;
+  /* fill: white; */
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.target {
+  float: left;
+  width: 100%;
+  margin-top: 2rem;
+  background-color: #439946;
+  color: white;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.target-dimmed {
+  float: left;
+  width: 100%;
+  background-color: #ccc;
+  color: white;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+
+  font-size: 2rem;
+  text-align: center;
+}

@@ -14,6 +14,12 @@ export class AppHome {
   @Prop() grammarId = "grammar";
   @Prop() exercisesId = "exercises";
 
+  @Prop() phrasesIcon = "assets/svg/phrases.svg";
+  @Prop() wordsIcon = "assets/svg/dictionary.svg";
+  @Prop() grammarIcon = "assets/svg/rules.svg";
+  @Prop() stepsIcon = "assets/svg/steps.svg";
+  @Prop() phrasesIconsvg = "assets/svg/phrases.svg";
+
   @State() activeTab = "vocabulary";
   @State() dimBackground = false;
   @State() lessonNumber = "16";
@@ -47,9 +53,20 @@ export class AppHome {
     console.log("dimming2", this.dimBackground);
   }
 
+  showOptions() {
+    console.log("here in show options");
+  }
+
+  recordClick(event) {
+    console.log("here in record click", event);
+  }
+
   render() {
     return [
-      <div class="app-home">
+      <div
+        class="app-home"
+        onClick={(event: UIEvent) => this.recordClick(event)}
+      >
         <div id="showScroll" class="main-container">
           <app-home-page
             hidden={this.activeTab == "home-page" ? false : true}
@@ -71,7 +88,16 @@ export class AppHome {
 
           <app-exercises
             hidden={this.activeTab == "exercises" ? false : true}
+            dimBackground={this.dimBackground}
           />
+
+          {/* <div class="just-white">
+            <div class="just-gray" />
+          </div>
+          <div class="just-grayx">
+            <img class="filter-tomato" src={this.phrasesIcon} />
+            <img class="filter-tomato" src={this.phrasesIconsvg} />
+          </div> */}
 
           <div class="white-out">white out</div>
           <div class="footer-home" hidden={this.hideMenuBars ? true : false}>
@@ -98,6 +124,10 @@ export class AppHome {
               class={this.activeTab == "grammar" ? "active" : "tab"}
               onClick={() => this.handleHomeTab(this.grammarId)}
             >
+              <img
+                class="filter-tomato icon-material icon-material_tw"
+                src={this.phrasesIcon}
+              />
               Grammar
             </div>
 
@@ -116,20 +146,31 @@ export class AppHome {
         onMouseEnter={() => this.toggleDimBackround()}
         onMouseLeave={() => this.toggleDimBackround()}
         // onClick={() => this.toggleDimBackround()}
-        class="fab"
+        class="fab disable-select"
         hidden={this.hideMenuBars ? true : false}
+        onClick={() => this.showOptions()}
       >
         <span class="fab-action-button">
           {/* <i class="fab-action-button__icon filter-white" /> */}
-          <div class="fab-action-button-text">{this.lessonNumber}</div>
+          <div
+            class="fab-action-button-text"
+            // onClick={() => this.showOptions()}
+          >
+            {this.lessonNumber}
+          </div>
         </span>
         <ul class="fab-buttons" id="vocabulary">
           <li
             class="fab-buttons__item"
             onClick={() => this.handleHomeTab(this.vocabularyId)}
           >
-            <a href="#" class="fab-buttons__link" data-tooltip="Words">
-              <i class="icon-material icon-material_fb" />
+            {/* <a href="#" class="fab-buttons__link" data-tooltip="Words"> */}
+            <a class="fab-buttons__link" data-tooltip="Words">
+              {/* <i class="icon-material icon-material_fb" /> */}
+              <img
+                class="filter-whitex fab-buttons__img"
+                src={this.wordsIcon}
+              />
             </a>
           </li>
           <li
@@ -137,7 +178,11 @@ export class AppHome {
             onClick={() => this.handleHomeTab(this.phrasesId)}
           >
             <a href="#" class="fab-buttons__link" data-tooltip="Phrases">
-              <i class="icon-material icon-material_tw" />
+              <img
+                class="filter-whitex fab-buttons__img"
+                src={this.phrasesIcon}
+              />
+              {/* <i class="icon-material icon-material_tw" /> */}
             </a>
           </li>
           <li
@@ -145,15 +190,17 @@ export class AppHome {
             onClick={() => this.handleHomeTab(this.grammarId)}
           >
             <a href="#" class="fab-buttons__link" data-tooltip="Rules">
-              <i class="icon-material icon-material_li" />
+              <img class="filter-x fab-buttons__img" src={this.grammarIcon} />
+              {/* <i class="icon-material icon-material_li" /> */}
             </a>
           </li>
           <li
             class="fab-buttons__item"
             onClick={() => this.handleHomeTab(this.exercisesId)}
           >
-            <a href="#" class="fab-buttons__link" data-tooltip="Lessons">
-              <i class="icon-material icon-material_gp" />
+            <a href="#" class="fab-buttons__link" data-tooltip="Steps">
+              {/* <i class="icon-material icon-material_gp" /> */}
+              <img class="filter-x fab-buttons__img" src={this.stepsIcon} />
             </a>
           </li>
         </ul>

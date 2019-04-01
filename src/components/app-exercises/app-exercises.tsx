@@ -1,4 +1,5 @@
-import { Component } from "@stencil/core";
+import { Component, Prop } from "@stencil/core";
+// import { MultipleChoice } from "./multiple-choice/multiple-choice";
 
 @Component({
   tag: "app-exercises",
@@ -6,11 +7,12 @@ import { Component } from "@stencil/core";
   shadow: true
 })
 export class AppExercises {
+  @Prop({ mutable: true }) dimBackground: boolean;
   render() {
     return (
       <div class="section-title">
-        {" "}
-        <h1>Lessons</h1>
+        {/* <h4>Steps</h4> */}
+        <multiple-choice dimBackground={this.dimBackground} />
       </div>
     );
   }

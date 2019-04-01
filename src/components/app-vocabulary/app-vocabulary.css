@@ -195,7 +195,7 @@ button:hover {
   position: fixed;
   bottom: 0;
   left: 0;
-  height: 2.5em;
+  height: 3em;
   width: 100%;
   /* padding-top: 1rem; */
   /* border-top-right-radius: 1rem;
@@ -207,37 +207,31 @@ button:hover {
 }
 .footer-phrases .tab {
   cursor: pointer;
-  float: left;
-  background-color: #888888;
-  color: #ddd;
-
   width: 49.5%;
+  color: #ddd;
+  font-size: 1.25rem;
   text-align: center;
-  border-right: 1px solid #cccccc;
-  /* border-top-right-radius: 15px; */
-  float: left;
+  background-color: #888888;
   padding-top: 0.75rem;
   padding-bottom: 1rem;
+  border-right: 1px solid #cccccc;
+  float: left;
 }
 
 .footer-phrases .active {
   cursor: pointer;
-  float: left;
-  fill: white;
-  /* width: 24.5%; */
   width: 49.5%;
-
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
   text-align: center;
-  border-right: 1px solid #cccccc;
-  /* border-top-right-radius: 15px; */
-  float: left;
   padding-top: 0.75rem;
   padding-bottom: 1rem;
   background-color: #e5e5e575;
   background-color: #394339;
-  color: #fff;
-  /* color: hsl(14, 95%, 55%); */
-  font-weight: 700;
+  fill: white;
+  border-right: 1px solid #cccccc;
+  float: left;
 }
 
 @media (min-width: 22em) {

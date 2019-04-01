@@ -16,8 +16,23 @@ import {
 
 export namespace Components {
 
-  interface AppExercises {}
-  interface AppExercisesAttributes extends StencilHTMLAttributes {}
+  interface AppExercises {
+    'dimBackground': boolean;
+  }
+  interface AppExercisesAttributes extends StencilHTMLAttributes {
+    'dimBackground'?: boolean;
+  }
+
+  interface MultipleChoice {
+    'dimBackground': boolean;
+    'questions': any[];
+    'vocabulary': any;
+  }
+  interface MultipleChoiceAttributes extends StencilHTMLAttributes {
+    'dimBackground'?: boolean;
+    'questions'?: any[];
+    'vocabulary'?: any;
+  }
 
   interface AppGrammar {}
   interface AppGrammarAttributes extends StencilHTMLAttributes {}
@@ -30,15 +45,25 @@ export namespace Components {
 
   interface AppHome {
     'exercisesId': string;
+    'grammarIcon': string;
     'grammarId': string;
+    'phrasesIcon': string;
+    'phrasesIconsvg': string;
     'phrasesId': string;
+    'stepsIcon': string;
     'vocabularyId': string;
+    'wordsIcon': string;
   }
   interface AppHomeAttributes extends StencilHTMLAttributes {
     'exercisesId'?: string;
+    'grammarIcon'?: string;
     'grammarId'?: string;
+    'phrasesIcon'?: string;
+    'phrasesIconsvg'?: string;
     'phrasesId'?: string;
+    'stepsIcon'?: string;
     'vocabularyId'?: string;
+    'wordsIcon'?: string;
   }
 
   interface AppPhrases {
@@ -131,6 +156,7 @@ export namespace Components {
 declare global {
   interface StencilElementInterfaces {
     'AppExercises': Components.AppExercises;
+    'MultipleChoice': Components.MultipleChoice;
     'AppGrammar': Components.AppGrammar;
     'AppHomeMenu': Components.AppHomeMenu;
     'AppHomePage': Components.AppHomePage;
@@ -144,6 +170,7 @@ declare global {
 
   interface StencilIntrinsicElements {
     'app-exercises': Components.AppExercisesAttributes;
+    'multiple-choice': Components.MultipleChoiceAttributes;
     'app-grammar': Components.AppGrammarAttributes;
     'app-home-menu': Components.AppHomeMenuAttributes;
     'app-home-page': Components.AppHomePageAttributes;
@@ -160,6 +187,12 @@ declare global {
   var HTMLAppExercisesElement: {
     prototype: HTMLAppExercisesElement;
     new (): HTMLAppExercisesElement;
+  };
+
+  interface HTMLMultipleChoiceElement extends Components.MultipleChoice, HTMLStencilElement {}
+  var HTMLMultipleChoiceElement: {
+    prototype: HTMLMultipleChoiceElement;
+    new (): HTMLMultipleChoiceElement;
   };
 
   interface HTMLAppGrammarElement extends Components.AppGrammar, HTMLStencilElement {}
@@ -218,6 +251,7 @@ declare global {
 
   interface HTMLElementTagNameMap {
     'app-exercises': HTMLAppExercisesElement
+    'multiple-choice': HTMLMultipleChoiceElement
     'app-grammar': HTMLAppGrammarElement
     'app-home-menu': HTMLAppHomeMenuElement
     'app-home-page': HTMLAppHomePageElement
@@ -231,6 +265,7 @@ declare global {
 
   interface ElementTagNameMap {
     'app-exercises': HTMLAppExercisesElement;
+    'multiple-choice': HTMLMultipleChoiceElement;
     'app-grammar': HTMLAppGrammarElement;
     'app-home-menu': HTMLAppHomeMenuElement;
     'app-home-page': HTMLAppHomePageElement;
