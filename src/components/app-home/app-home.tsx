@@ -18,8 +18,7 @@ export class AppHome {
   @Prop() wordsIcon = "assets/svg/dictionary.svg";
   @Prop() grammarIcon = "assets/svg/rules.svg";
   @Prop() stepsIcon = "assets/svg/steps.svg";
-  @Prop() phrasesIconsvg = "assets/svg/phrases.svg";
-
+  @Prop() moreIcon = "assets/svg/baseline-more_vert-24px.svg";
   @State() activeTab = "vocabulary";
   @State() dimBackground = false;
   @State() lessonNumber = "16";
@@ -156,7 +155,11 @@ export class AppHome {
             class="fab-action-button-text"
             // onClick={() => this.showOptions()}
           >
-            {this.lessonNumber}
+            {/* {this.lessonNumber} */}
+            <img
+              class="filter-white fab-buttons-main__img"
+              src={this.moreIcon}
+            />
           </div>
         </span>
         <ul class="fab-buttons" id="vocabulary">

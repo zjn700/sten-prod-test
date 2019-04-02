@@ -10,12 +10,13 @@ export class MultipleChoice {
   @Prop() vocabulary = wordList;
   @Prop({ mutable: true }) questions: any[];
   @Prop({ mutable: true }) dimBackground: boolean;
+  @Prop() chef = "assets/images/chef.svg";
 
   componentWillLoad() {
     console.log("will load");
     // for (let index = 0; index < this.vocabulary.length; index++) {
     let qs = [];
-    for (let index = 0; index < 1; index++) {
+    for (let index = 1; index < 2; index++) {
       let correct = this.vocabulary[index];
       // qs.push(this.vocabulary[index]);
 
@@ -35,21 +36,31 @@ export class MultipleChoice {
       <div class="section-title">
         {/* <h3 class="h1">Exercises Multiple Choice</h3> */}
       </div>,
-      <div class="main-container">
+      <div
+        class={this.dimBackground ? "main-container-dimmed" : "main-container"}
+      >
         {this.questions.map(item => (
           <div class="question-card">
-            {/* <div class="target"> */}
-            <div class={this.dimBackground ? "target-dimmed" : "target"}>
-              {item.correct.meaning}
-            </div>
-            <div class={this.dimBackground ? "answer-dimmed" : "answer"}>
-              {item.correct.word}
-            </div>
-            {item.wrong.map(wrong => (
-              <div class={this.dimBackground ? "answer-dimmed" : "answer"}>
-                {wrong.word}
+            <div class="target-box">
+              <div class={this.dimBackground ? "target-dimmed" : "target"}>
+                {/* {item.correct.meaning} */}
+                <img class="filter-white chef" src={this.chef} />
               </div>
-            ))}
+            </div>
+            <div class="answer-box">
+              <div
+                class={this.dimBackground ? "answer-dimmed" : "answer right"}
+              >
+                {item.correct.word}
+              </div>
+              {item.wrong.map(wrong => (
+                <div
+                  class={this.dimBackground ? "answer-dimmed" : "answer wrong"}
+                >
+                  {wrong.word}
+                </div>
+              ))}
+            </div>
           </div>
         ))}
       </div>

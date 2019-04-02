@@ -24,11 +24,13 @@ export namespace Components {
   }
 
   interface MultipleChoice {
+    'chef': string;
     'dimBackground': boolean;
     'questions': any[];
     'vocabulary': any;
   }
   interface MultipleChoiceAttributes extends StencilHTMLAttributes {
+    'chef'?: string;
     'dimBackground'?: boolean;
     'questions'?: any[];
     'vocabulary'?: any;
@@ -47,8 +49,8 @@ export namespace Components {
     'exercisesId': string;
     'grammarIcon': string;
     'grammarId': string;
+    'moreIcon': string;
     'phrasesIcon': string;
-    'phrasesIconsvg': string;
     'phrasesId': string;
     'stepsIcon': string;
     'vocabularyId': string;
@@ -58,8 +60,8 @@ export namespace Components {
     'exercisesId'?: string;
     'grammarIcon'?: string;
     'grammarId'?: string;
+    'moreIcon'?: string;
     'phrasesIcon'?: string;
-    'phrasesIconsvg'?: string;
     'phrasesId'?: string;
     'stepsIcon'?: string;
     'vocabularyId'?: string;
