@@ -49,7 +49,7 @@ export class AppVocabulary {
 
       //   <div class="lesson-title">Lesson 1</div>
       // </div>,
-
+      <div class={this.dimBackground ? "cover-dimmed" : "cover"} />,
       <div class="main-container">
         {this.vocabulary.map((item, index) => (
           <app-vocabulary-card

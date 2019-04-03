@@ -10,6 +10,23 @@
   font-size: 1.5rem;
 }
 
+.cover {
+  height: 0;
+  width: 0;
+  z-index: -5;
+}
+
+.cover-dimmed {
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  width: 100%;
+  padding-top: 1075%;
+  z-index: 3;
+  background-color: #ddd;
+  /* background-color: red; */
+  opacity: 0.5;
+}
 div.card {
   position: relative;
   width: 100%;
@@ -189,7 +206,7 @@ button:hover {
 }
 
 .footer-phrases {
-  z-index: 0;
+  z-index: 5;
   width: 100%;
   background-color: white;
   position: fixed;
