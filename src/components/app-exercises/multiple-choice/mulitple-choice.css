@@ -1,7 +1,9 @@
 .section-title {
   width: 100%;
 }
-
+.hidden {
+  display: none;
+}
 .submit {
   position: absolute;
   bottom: 1rem;
@@ -116,7 +118,7 @@
 
 @media (orientation: landscape) {
   .question-card {
-    padding-bottom: 10%;
+    padding-bottom: 0;
   }
 
   .target-box {
@@ -175,19 +177,20 @@
   perspective: 1000px; */
 }
 
-.answer.right:hover {
+/* .answer.right:hover { */
+.answered-correctly {
   /* border-radius: 0 0 50% 50%; */
   border-radius: 0;
   border: none;
-  font-size: 3rem;
+  /* font-size: 3rem; */
   width: 100%;
-  padding-top: 35%;
-  padding-bottom: 50%;
+  padding-top: 25%;
+  padding-bottom: 57%;
   color: #459848;
-  animation: nod 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  /* animation: nod 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
-  perspective: 1000px;
+  perspective: 1000px; */
 }
 
 .answer.wrong:hover {

@@ -1,4 +1,4 @@
-import { Component, Prop } from "@stencil/core";
+import { Component, Prop, State } from "@stencil/core";
 import { wordList } from "../../../assets/data/vocabulary";
 import { shuffle } from "../../../global/utilities";
 
@@ -9,35 +9,79 @@ import { shuffle } from "../../../global/utilities";
 })
 export class MultipleChoice {
   @Prop() vocabulary = wordList;
+  @State() currentWord = 0;
   @Prop({ mutable: true }) questions: any[];
   @Prop({ mutable: true }) answers: any[];
   @Prop({ mutable: true }) dimBackground: boolean;
   @Prop() chef = "assets/images/chef.svg";
 
   componentWillLoad() {
+    this.getNextQuestion();
     console.log("will load");
+    // let qs = [];
+    // let allAnswers = [];
+    // for (let index = 2; index < 3; index++) {
+    //   let correct = this.vocabulary[index];
+    //   let correctObj = { correct: "right", details: this.vocabulary[index] };
+    //   allAnswers.push(correctObj);
+    //   console.log("correctobj", correctObj);
+    //   let wrongAnswers = [];
+    //   for (let wrong = index + 1; wrong < index + 4; wrong++) {
+    //     let wrongObj = { correct: "wrong", details: this.vocabulary[wrong] };
+    //     console.log("wrongobg", wrongObj);
+    //     wrongAnswers.push(this.vocabulary[wrong]);
+    //     allAnswers.push(wrongObj);
+    //   }
+    //   qs.push({ correct: correct });
+    //   this.questions = qs;
+    //   this.answers = allAnswers;
+    // }
+
+    // // console.log(qs);
+    // console.log(allAnswers);
+    // allAnswers = shuffle(allAnswers);
+  }
+
+  componentDidUpdate() {
+    console.log("Component did update");
+  }
+  componentWillUpdate() {
+    console.log("Component will update and re-render");
+  }
+  componentDidUnload() {
+    console.log("Component removed from the DOM");
+  }
+
+  getNextQuestion() {
+    console.log("in next q");
     let qs = [];
     let allAnswers = [];
-    for (let index = 2; index < 3; index++) {
+    for (let index = this.currentWord; index < this.currentWord + 1; index++) {
       let correct = this.vocabulary[index];
-      let correctObj = { correct: "right", details: this.vocabulary[index] };
+      let correctObj = {
+        correct: "right",
+        details: this.vocabulary[index]
+      };
       allAnswers.push(correctObj);
       console.log("correctobj", correctObj);
       let wrongAnswers = [];
       for (let wrong = index + 1; wrong < index + 4; wrong++) {
-        let wrongObj = { correct: "wrong", details: this.vocabulary[wrong] };
-        console.log("wrongobg", wrongObj);
+        let wrongObj = {
+          correct: "wrong",
+          details: this.vocabulary[wrong]
+        };
+        console.log("wrongobj", wrongObj);
         wrongAnswers.push(this.vocabulary[wrong]);
         allAnswers.push(wrongObj);
       }
-      qs.push({ correct: correct, wrong: wrongAnswers });
+      qs.push({ correct: correct });
       this.questions = qs;
       this.answers = allAnswers;
     }
 
-    console.log(qs);
     console.log(allAnswers);
     allAnswers = shuffle(allAnswers);
+    this.currentWord += 1;
   }
 
   handleWrongAnswer(event) {
@@ -69,21 +113,31 @@ export class MultipleChoice {
         fill: "both"
       }
     );
-    // event.path[0].style.animationPlayState = "paused";
-    // event.path[0].style.animationPlayState = "running";
-
     setTimeout(() => {
       event.path[0].classList.remove("mystyle");
     }, 1000);
   }
 
-  handleRightgAnswer(event) {
+  handleRightAnswer(event) {
     console.log("in right answer", event);
+    event.path[0].classList.add("answered-correctly");
+
     let wrongList = event.path[1].getElementsByClassName("wrong");
     for (let index = 0; index < wrongList.length; index++) {
-      // event.path[0].classList.add("mystyle");
+      wrongList[index].classList.add("hidden");
+
+      // event.path[0].cla  ssList.add("mystyle");
     }
+    setTimeout(() => {
+      for (let index = 0; index < wrongList.length; index++) {
+        wrongList[index].classList.remove("hidden");
+      }
+      event.path[0].classList.remove("answered-correctly");
+      this.getNextQuestion();
+    }, 3000);
   }
+
+  clearClasses() {}
 
   render() {
     return [
@@ -114,14 +168,14 @@ export class MultipleChoice {
                   onClick={
                     answer.correct == "wrong"
                       ? (event: UIEvent) => this.handleWrongAnswer(event)
-                      : (event: UIEvent) => this.handleRightgAnswer(event)
+                      : (event: UIEvent) => this.handleRightAnswer(event)
                   }
                 >
                   {answer.details.word}
                 </div>
               ))}
 
-              <div
+              {/* <div
                 class={this.dimBackground ? "answer-dimmed" : "answer right"}
               >
                 {item.correct.word}
@@ -130,14 +184,11 @@ export class MultipleChoice {
                 <div
                   id={"wrong-" + index}
                   class={this.dimBackground ? "answer-dimmed" : "answer wrong"}
-                  // onMouseEnter={(event: UIEvent) =>
-                  //   this.handleWrongAnswer2(event)
-                  // }
                   onClick={(event: UIEvent) => this.handleWrongAnswer(event)}
                 >
                   {wrong.word}
                 </div>
-              ))}
+              ))} */}
             </div>
           </div>
         ))}
