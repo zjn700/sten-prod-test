@@ -24,12 +24,14 @@ export namespace Components {
   }
 
   interface MultipleChoice {
+    'answers': any[];
     'chef': string;
     'dimBackground': boolean;
     'questions': any[];
     'vocabulary': any;
   }
   interface MultipleChoiceAttributes extends StencilHTMLAttributes {
+    'answers'?: any[];
     'chef'?: string;
     'dimBackground'?: boolean;
     'questions'?: any[];
