@@ -4,6 +4,9 @@
 .is-hidden {
   display: none;
 }
+.always-hidden {
+  display: none;
+}
 .submit {
   position: absolute;
   bottom: 1rem;
@@ -227,6 +230,15 @@
   color: #ddd;
 }
 
+.answered-incorrectly-shake {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  color: burlywood;
+  color: tomato;
+
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
 /* .answer.wrong:hover,
 .answer.wrong:active {
   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
@@ -235,6 +247,10 @@
   backface-visibility: hidden;
   perspective: 1000px;
 } */
+.no-click-is-hidden,
+.right-choice-is-hidden {
+  display: none;
+}
 
 @keyframes nod {
   10%,

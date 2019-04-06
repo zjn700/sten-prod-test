@@ -104,16 +104,27 @@ export class MultipleChoice {
   }
   handleWrongAnswer(event) {
     // console.log("is mob", this.isMobileDevice());
-    this.answerBox = event.path[1];
+    console.log(event.path);
+    console.log(
+      event.srcElement.parentElement,
+      event.srcElement as HTMLElement
+    );
 
-    let wrongList = event.path[1].getElementsByClassName("wrong");
+    // this.answerBox = event.path[1];
+    let thisElement = event.srcElement;
+    this.answerBox = event.srcElement.parentElement;
+
+    // let wrongList = event.path[1].getElementsByClassName("wrong");
+    let wrongList = this.answerBox.getElementsByClassName("wrong");
     for (let index = 0; index < wrongList.length; index++) {
-      wrongList[index].classList.remove("answered-incorrectly");
+      wrongList[index].classList.remove("answered-incorrectly-shake");
     }
 
-    event.path[0].classList.add("answered-incorrectly");
+    // event.path[0].classList.add("answered-incorrectly");
+    // thisElement.classList.add("answered-incorrectly");
     // event.path[0].classList.add("hoverable");
-    console.log(event.path[0].classList.value);
+    // console.log(event.path[0].classList.value);
+    console.log(thisElement.classList.value);
     // event.path[0].innerHTML = event.path[0].classList.value;
 
     // event.path[0].style.WebkitTransform = "translateX('300px')";
@@ -122,47 +133,52 @@ export class MultipleChoice {
     // event.path[0].style.color = "green";
     // event.path[0].style.fontSize = "3rem";
 
-    event.path[0].animate(
-      [
-        // keyframes
-        {
-          transform: "translate3d(-2px, 0, 0)"
-        },
-        {
-          transform: "translate3d(4px, 0, 0)"
-        },
-        {
-          transform: "translate3d(-4px, 0, 0)"
-        },
-        {
-          transform: "translate3d(4px, 0, 0)"
-        },
-        {
-          transform: "translate3d(-4px, 0, 0)"
-        },
-        {
-          transform: "translate3d(4px, 0, 0)"
-        },
-        {
-          transform: "translate3d(-4px, 0, 0)"
-        },
-        {
-          transform: "translate3d(2px, 0, 0)"
-        }
-        // { transform: "translateY(0px)" },
-        // { transform: "translateY(-300px)" }
-      ],
-      {
-        // timing options
-        // offset: [0.4, 0.6],
-        duration: 1200,
-        iterations: 1,
-        easing: "cubic-bezier(0.36, 0.07, 0.19, 0.97)",
-        fill: "both"
-      }
-    );
+    // event.path[0].animate(
+
+    thisElement.classList.add("answered-incorrectly-shake");
+    // thisElement.animate(
+    //   [
+    //     // keyframes
+    //     {
+    //       transform: "translate3d(-2px, 0, 0)"
+    //     },
+    //     {
+    //       transform: "translate3d(4px, 0, 0)"
+    //     },
+    //     {
+    //       transform: "translate3d(-4px, 0, 0)"
+    //     },
+    //     {
+    //       transform: "translate3d(4px, 0, 0)"
+    //     },
+    //     {
+    //       transform: "translate3d(-4px, 0, 0)"
+    //     },
+    //     {
+    //       transform: "translate3d(4px, 0, 0)"
+    //     },
+    //     {
+    //       transform: "translate3d(-4px, 0, 0)"
+    //     },
+    //     {
+    //       transform: "translate3d(2px, 0, 0)"
+    //     }
+    //     // { transform: "translateY(0px)" },
+    //     // { transform: "translateY(-300px)" }
+    //   ],
+    //   {
+    //     // timing options
+    //     // offset: [0.4, 0.6],
+    //     duration: 1200,
+    //     iterations: 1,
+    //     easing: "cubic-bezier(0.36, 0.07, 0.19, 0.97)",
+    //     fill: "both"
+    //   }
+    // );
     setTimeout(() => {
-      event.path[0].classList.remove("answered-incorrectly");
+      // event.path[0].classList.remove("answered-incorrectly");
+      // thisElement.classList.remove("answered-incorrectly");
+      thisElement.classList.remove("answered-incorrectly-shake");
     }, 1000);
   }
 
@@ -176,28 +192,33 @@ export class MultipleChoice {
   }
 
   async handleRightAnswer(event) {
-    // if (this.waiting) {
-    //   return;
-    // }
-    // console.log("is mob", this.isMobileDevice());
-    // if (this.isMobileDevice()) {
-    // }
-
     console.log("in right answer", event);
 
-    // this.waiting = true;
-    this.answerBox = event.path[1];
-    event.path[0].classList.add("answered-correctly");
+    // this.answerBox = event.path[1];
+    let thisElement = event.srcElement;
+    this.answerBox = event.srcElement.parentElement;
+
+    // event.path[0].classList.add("answered-correctly");
+    // event.path[0].classList.add("right-choice-is-hidden");
+    thisElement.classList.add("right-choice-is-hidden");
     // event.path[0].classList.add("hoverable");
 
-    let wrongList = event.path[1].getElementsByClassName("wrong");
+    // let noClick = event.path[1].getElementsByClassName("no-click");
+    let noClick = this.answerBox.getElementsByClassName("no-click");
+    console.log("right answ", noClick[0]);
+    noClick[0].classList.remove("no-click-is-hidden");
+    console.log("right answ", noClick[0]);
+
+    // let wrongList = event.path[1].getElementsByClassName("wrong");
+    let wrongList = this.answerBox.getElementsByClassName("wrong");
     console.log("wro lis len", wrongList.length);
     for (let index = 0; index < wrongList.length; index++) {
       console.log("wro lis", wrongList[index]);
       wrongList[index].classList.add("is-hidden");
       console.log("wro lis 2", wrongList[index]);
     }
-    let hidden = event.path[1].getElementsByClassName("is-hidden");
+    // let hidden = event.path[1].getElementsByClassName("is-hidden");
+    let hidden = this.answerBox.getElementsByClassName("is-hidden");
     for (let index = 0; index < hidden.length; index++) {
       console.log("is-hidden item", hidden[index]);
     }
@@ -206,7 +227,10 @@ export class MultipleChoice {
       console.log("in tim out");
       this.resetHiddenClasses();
 
-      event.path[0].classList.remove("answered-correctly");
+      // event.path[0].classList.remove("answered-correctly");
+      noClick[0].classList.add("no-click-is-hidden");
+      // event.path[0].classList.remove("right-choice-is-hidden");
+      thisElement.classList.remove("right-choice-is-hidden");
       this.getNextQuestion();
       // this.waiting = false;
     }, 3000);
@@ -248,17 +272,17 @@ export class MultipleChoice {
             </div>
             <div class="answer-box">
               {/* {this.answers.map(answer => ()} */}
-              {/* {this.answers.map(answer => (
+              {this.answers.map(answer => (
                 <div
                   class={
                     answer.correct == "right"
-                      ? "answer answered-correctly is-hidden no-click"
-                      : "is-hidden}"
+                      ? "answer answered-correctly no-click-is-hidden no-click"
+                      : "always-hidden}"
                   }
                 >
                   {answer.correct == "right" ? answer.details.word : ""}
                 </div>
-              ))} */}
+              ))}
               {this.answers.map(answer => (
                 <div
                   class={
@@ -271,28 +295,10 @@ export class MultipleChoice {
                       ? (event: UIEvent) => this.handleWrongAnswer(event)
                       : (event: UIEvent) => this.handleRightAnswer(event)
                   }
-                  // onMouseEnter={(event: UIEvent) =>
-                  //   this.handleMouseEnter(event)
-                  // }
                 >
                   {answer.details.word}
                 </div>
               ))}
-
-              {/* <div
-                class={this.dimBackground ? "answer-dimmed" : "answer right"}
-              >
-                {item.correct.word}
-              </div>
-              {item.wrong.map((wrong, index) => (
-                <div
-                  id={"wrong-" + index}
-                  class={this.dimBackground ? "answer-dimmed" : "answer wrong"}
-                  onClick={(event: UIEvent) => this.handleWrongAnswer(event)}
-                >
-                  {wrong.word}
-                </div>
-              ))} */}
             </div>
           </div>
         ))}
