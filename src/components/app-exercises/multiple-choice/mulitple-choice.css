@@ -1,7 +1,7 @@
 .section-title {
   width: 100%;
 }
-.hidden {
+.is-hidden {
   display: none;
 }
 .submit {
@@ -167,8 +167,12 @@
 
 /* shake */
 
-.mystyle {
+.answered-incorrectly {
   color: tomato;
+  /* -webkit-transform: scale(3);
+  transform: scale(3);
+  background-color: gray; */
+
   /* color: black; */
 
   /* animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
@@ -176,8 +180,35 @@
   backface-visibility: hidden;
   perspective: 1000px; */
 }
+/* .answer.wrong.is-hidden  */
+.answer.wrong.is-hidden {
+  display: none;
+}
 
-/* .answer.right:hover { */
+/* .hoverable.answered-incorrectly:hover {
+  color: darkmagenta;
+  color: olive;
+}  */
+
+/* .answer.right:hover {
+  color: violet;
+  color: gold;
+  border-radius: 0;
+  border: none;
+  width: 100%;
+  padding-top: 25%;
+  padding-bottom: 57%; 
+  color: #459848;
+} */
+
+/* .answer.right:hover ~ .answer.wrong {
+  display: none;
+} */
+/* 
+.hoverable.answered-correctly:hover {
+  color: rgb(105, 255, 235);
+} */
+
 .answered-correctly {
   /* border-radius: 0 0 50% 50%; */
   border-radius: 0;
@@ -192,13 +223,18 @@
   backface-visibility: hidden;
   perspective: 1000px; */
 }
+.answered-correctly.dimmed {
+  color: #ddd;
+}
 
-.answer.wrong:hover {
-  animation: shakex 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+/* .answer.wrong:hover,
+.answer.wrong:active {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  color: burlywood;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
-}
+} */
 
 @keyframes nod {
   10%,
