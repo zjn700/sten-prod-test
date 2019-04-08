@@ -27,7 +27,7 @@ export class MultipleChoice {
     console.log("Component did update");
     console.log("isMobileDevice", this.isMobileDevice());
 
-    // this.resetHiddenClasses();
+    this.resetHiddenClasses();
   }
 
   getNextQuestion() {
@@ -121,6 +121,11 @@ export class MultipleChoice {
     }
   }
 
+  noClick(event) {
+    console.log("in no click", event);
+    event.stopImmediatePropagation();
+  }
+
   render() {
     console.log("in render");
     return [
@@ -157,7 +162,9 @@ export class MultipleChoice {
                       : "answer " + answer.correct
                   }
                   onClick={
-                    answer.correct == "wrong"
+                    this.dimBackground
+                      ? (event: UIEvent) => this.noClick(event)
+                      : answer.correct == "wrong"
                       ? (event: UIEvent) => this.handleWrongAnswer(event)
                       : (event: UIEvent) => this.handleRightAnswer(event)
                   }
