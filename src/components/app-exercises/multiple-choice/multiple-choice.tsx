@@ -27,7 +27,7 @@ export class MultipleChoice {
     console.log("Component did update");
     console.log("isMobileDevice", this.isMobileDevice());
 
-    this.resetHiddenClasses();
+    // this.resetHiddenClasses();
   }
 
   getNextQuestion() {
@@ -91,28 +91,32 @@ export class MultipleChoice {
     this.answerBox = event.srcElement.parentElement;
 
     thisElement.classList.add("right-choice-is-hidden");
-    let noClick = this.answerBox.getElementsByClassName("no-click");
-    noClick[0].classList.remove("no-click-is-hidden");
+    let noClick = this.answerBox.getElementsByClassName("no-click")[0];
+    noClick.classList.remove("no-click-is-hidden");
 
     let wrongList = this.answerBox.getElementsByClassName("wrong");
+    console.log("wrongList", wrongList);
     for (let index = 0; index < wrongList.length; index++) {
-      wrongList[index].classList.add("is-hidden");
+      console.log("index", index, wrongList[index]);
+      wrongList[index].classList.add("wrong-answer-is-hidden");
+      console.log("index 2", index, wrongList[index]);
     }
+    console.log("wrongList", wrongList);
 
     await setTimeout(() => {
       this.resetHiddenClasses();
-      noClick[0].classList.add("no-click-is-hidden");
+      noClick.classList.add("no-click-is-hidden");
       thisElement.classList.remove("right-choice-is-hidden");
       this.getNextQuestion();
     }, 3000);
   }
 
   resetHiddenClasses() {
-    console.log("in resetHiddenClasses");
+    console.log("in resetHiddenClasses", this.answerBox);
     if (this.answerBox) {
-      let answers = this.answerBox.getElementsByClassName("is-hidden");
+      let answers = this.answerBox.getElementsByClassName("wrong");
       for (let index = 0; index < answers.length; index++) {
-        answers[index].classList.remove("is-hidden");
+        answers[index].classList.remove("wrong-answer-is-hidden");
       }
     }
   }
