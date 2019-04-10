@@ -34,6 +34,7 @@ export namespace Components {
     'answers'?: any[];
     'chef'?: string;
     'dimBackground'?: boolean;
+    'onToggleFab'?: (event: CustomEvent<any>) => void;
     'questions'?: any[];
     'vocabulary'?: any;
   }
