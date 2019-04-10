@@ -1,3 +1,7 @@
+body {
+  background-color: #cccccc;
+}
+
 .section-title {
   width: 100%;
 }
@@ -18,13 +22,14 @@
   background-color: #ddd;
   opacity: 0.5;
 }
-.main-container {
+.mc-container {
   width: 100%;
   margin-top: 1.6rem;
   background-color: #459848;
+  /* background-color: #ccc; */
 }
 
-.main-container-dimmed {
+.mc-container-dimmed {
   width: 100%;
   margin-top: 1.6rem;
   background-color: #ccc;
@@ -107,10 +112,8 @@
     brightness(106%) contrast(101%);
 }
 
-@media (orientation: landscape) {
-  /* .question-card {
-    padding-bottom: 0;
-  } */
+/* @media (orientation: landscape) {
+
 
   .target-box {
     float: right;
@@ -123,15 +126,23 @@
   .answered-correctly.no-click {
     padding-bottom: 62%;
   }
+} */
+@viewport {
+  zoom: 1;
+  width: device-width;
 }
 
 /* portrait */
 @media only screen and (orientation: portrait) {
+  /* .mc-container {
+    padding-bottom: 28%;
+    background-color: #ccc;
+  } */
   .question-card {
     padding-bottom: 0;
   }
   /* iphone 5 */
-  @media (min-device-width: 320px) {
+  @media (min-width: 320px) {
     .answer,
     .answer-dimmed {
       padding-top: 1.5rem;
@@ -145,7 +156,7 @@
     }
   }
   /* galaxy 5 */
-  @media (min-device-width: 360px) {
+  @media (min-width: 360px) {
     .answer,
     .answer-dimmed {
       padding-top: 1.5rem;
@@ -156,22 +167,22 @@
     }
   }
 
-  /* iphone 678 and X */
-  @media (min-device-width: 375px) {
+  /* iphone 6/7/8 and X */
+  @media (min-width: 375px) {
     .target {
       font-size: 1.8rem;
     }
     .answer,
     .answer-dimmed {
-      padding-top: 1.6rem;
-      padding-bottom: 1.6rem;
+      padding-top: 1.4rem;
+      padding-bottom: 1.4rem;
       font-size: 1.8rem;
     }
     .answered-correctly.no-click {
-      padding-bottom: 58%;
+      padding-bottom: 52%;
     }
     /* iphone x only */
-    @media (min-device-height: 812px) {
+    @media (min-height: 812px) {
       .question-card {
         padding-bottom: 0;
       }
@@ -194,21 +205,23 @@
   }
 
   /* pixel 2 and 2 xl */
-  @media (min-device-width: 411px) {
+  @media (min-width: 411px) {
     .question-card {
+      margin-top: 2rem;
       padding-bottom: 0;
     }
+
     .answer,
     .answer-dimmed {
-      padding-top: 1.8rem;
-      padding-bottom: 1.8rem;
+      padding-top: 1.1rem;
+      padding-bottom: 1.1rem;
     }
     .answered-correctly.no-click {
-      padding-bottom: 58%;
+      padding-bottom: 35%;
     }
 
     /* pixel 2 xl only */
-    @media (min-device-height: 823px) {
+    @media (min-height: 823px) {
       .answered-correctly.no-click {
         padding-bottom: 62%;
       }
@@ -216,7 +229,7 @@
   }
 
   /* iphone 6/7/8 plus */
-  @media (min-device-width: 414px) {
+  @media (min-width: 414px) {
     .question-card {
       padding-bottom: 0;
     }
@@ -231,9 +244,9 @@
   }
 
   /* ipad */
-  @media (min-device-width: 768px) {
-    /* @media (max-device-height: 1024px) { */
-    .main-container {
+  @media (min-width: 768px) {
+    /* @media (max-height: 1024px) { */
+    .mc-container {
       margin-top: 5%;
       margin-left: 15%;
       margin-right: 15%;
@@ -244,23 +257,25 @@
     }
     .target {
       font-size: 3.5rem;
+      padding-top: 35%;
+      /* color: yellow; */
     }
     .answer,
     .answer-dimmed {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
+      padding-top: 1.4rem;
+      padding-bottom: 1.4rem;
       font-size: 2.5rem;
     }
     .answered-correctly.no-click {
-      padding-bottom: 45%;
+      padding-bottom: 32%;
       font-size: 3.5rem;
     }
     /* } */
   }
 
   /* ipad pro */
-  @media (min-device-width: 1024px) {
-    .main-container {
+  @media (min-width: 1024px) {
+    .mc-container {
       margin-top: 5%;
       margin-left: 15%;
       margin-right: 15%;
@@ -285,186 +300,301 @@
   }
 }
 
-/* landscape */
+/* landscape ***********************************************************************************************/
 @media only screen and (orientation: landscape) {
+  :root {
+    --answer-font-size: 40px;
+  }
+
+  .mc-container {
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+  }
   .question-card {
     padding-bottom: 0;
   }
+  .target-box {
+    float: right;
+    width: 50%;
+  }
+  .target,
+  .target-dimmed {
+    padding-bottom: 0;
+    /* color: goldenrod; */
+  }
+  .answer-box {
+    width: 50%;
+  }
+  /* .answered-correctly.no-click {
+    padding-bottom: 62%;
+  } */
 
   /* iphone 5 */
-  @media (min-device-width: 568px) {
-    /* and (-webkit-device-pixel-ratio: 2) */
-    .question-card {
-      padding-bottom: 0;
-    }
-    .target,
-    .target-dimmed {
-      padding-bottom: 0;
-    }
-    .answer,
-    .answer-dimmed {
-      padding-top: 0.8rem;
-      padding-bottom: 0.9rem;
-      font-size: 1.8rem;
-    }
-    .answered-correctly.no-click {
-      padding-bottom: 58%;
+  @media (min-width: 568px) {
+    @media (max-height: 320px) {
+      /* and (-webkit-device-pixel-ratio: 2) */
+      .mc-container {
+        margin-top: 5%;
+      }
+
+      .question-card {
+        padding-bottom: 0;
+      }
+      .target,
+      .target-dimmed {
+        padding-bottom: 0;
+      }
+      .answer,
+      .answer-dimmed {
+        padding-top: 0.7rem;
+        padding-bottom: 0.8rem;
+        font-size: var(--answer-font-size, 1.5rem);
+      }
+      .answered-correctly.no-click {
+        padding-bottom: 65%;
+      }
     }
   }
 
   /* galaxy 5 */
-  @media (min-device-width: 640px) {
-    /* and (max-device-height: 375px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)*/
-    .answer,
-    .answer-dimmed {
-      /* color: green; */
-      padding-top: 1.1rem;
-      padding-bottom: 1.1rem;
+  @media (min-width: 640px) {
+    @media (max-height: 360px) {
+      /* and (max-height: 375px) and (orientation: landscape) 
+      and (-webkit-device-pixel-ratio: 2)*/
+      .mc-container {
+        margin-top: 5%;
+      }
+      .answer,
+      .answer-dimmed {
+        /* color: green; */
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        font-size: 1.6rem;
+      }
+      .answered-correctly.no-click {
+        padding-bottom: 70%;
+      }
     }
   }
 
   /* iphone 6/7/8 */
-  @media (min-device-width: 667px) {
-    /* and (max-device-height: 375px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) */
-    .answer,
-    .answer-dimmed {
-      padding-top: 1.2rem;
-      padding-bottom: 1.3rem;
-    }
-    .answered-correctly.no-click {
-      padding-bottom: 62%;
+  @media (min-width: 667px) {
+    @media (max-height: 375px) {
+      /* and (max-height: 375px) and (orientation: landscape) 
+      and (-webkit-device-pixel-ratio: 2) */
+      .mc-container {
+        margin-top: 5%;
+      }
+      .answer,
+      .answer-dimmed {
+        padding-top: 1.1rem;
+        padding-bottom: 1.2rem;
+        font-size: 1.7rem;
+      }
+      .answered-correctly.no-click {
+        padding-bottom: 75%;
+      }
     }
   }
+
   /* iphone 6/7/8 plus */
-  @media (min-device-width: 736px) {
-    /* @media (max-device-height: 414) and (-webkit-device-pixel-ratio: 2) { */
-    .answer,
-    .answer-dimmed {
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem;
-    }
-    .answered-correctly.no-click {
-      padding-bottom: 62%;
+  @media (min-width: 736px) {
+    @media (max-height: 414px) {
+      /* @media (max-height: 414px) and (-webkit-device-pixel-ratio: 2) { */
+      .mc-container {
+        margin-top: 5%;
+      }
+      .answer,
+      .answer-dimmed {
+        padding-top: 1.4rem;
+        padding-bottom: 1.4rem;
+        font-size: 1.8rem;
+      }
+      .answered-correctly.no-click {
+        /* color: red; */
+        padding-bottom: 75%;
+      }
     }
   }
 
   /* iphone x */
-  @media (min-device-width: 812px) {
-    /* and (max-device-height: 375px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) */
-    .answer,
-    .answer-dimmed {
-      padding-top: 1.2rem;
-      padding-bottom: 1.3rem;
-    }
-    .answered-correctly.no-click {
-      padding-bottom: 46%;
+  @media (min-width: 812px) {
+    @media (max-height: 375px) {
+      /* and (max-height: 375px) and (orientation: landscape) 
+      and (-webkit-device-pixel-ratio: 3) */
+      .mc-container {
+        margin-top: 5%;
+      }
+      .answer,
+      .answer-dimmed {
+        padding-top: 1.1rem;
+        padding-bottom: 1.1rem;
+        font-size: 1.5rem;
+      }
+      .answered-correctly.no-click {
+        padding-bottom: 53%;
+      }
     }
   }
 
   /* pixel 2 */
-  @media (min-device-width: 731px) {
-    .answer,
-    .answer-dimmed {
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem;
-    }
-    .answered-correctly.no-click {
-      padding-bottom: 62%;
+  /* @media (min-width: 731px) and (device-aspect-ratio: 2/1) { */
+  @media (min-width: 731px) {
+    @media (min-height: 411px) {
+      .mc-container {
+        margin-top: 5%;
+      }
+      .answer,
+      .answer-dimmed {
+        padding-top: 1.3rem;
+        padding-bottom: 1.3rem;
+        font-size: 1.6rem;
+        /* color: red; */
+      }
+      .answered-correctly.no-click {
+        padding-bottom: 72%;
+      }
     }
   }
 
   /* pixel 2 xl */
-  @media (min-device-width: 823px) {
-    .answer,
-    .answer-dimmed {
-      padding-top: 1.5rem;
-      padding-bottom: 1.6rem;
-    }
-    .answered-correctly.no-click {
-      padding-bottom: 55%;
+  @media (min-width: 823px) {
+    @media (max-height: 411px) {
+      .mc-container {
+        margin-top: 5%;
+      }
+      .answer,
+      .answer-dimmed {
+        padding-top: 1.3rem;
+        padding-bottom: 1.3rem;
+      }
+      .answered-correctly.no-click {
+        padding-bottom: 48%;
+      }
     }
   }
 
   /* ipad */
-  @media (min-device-width: 1024px) {
-    .question-card {
-      padding-bottom: 0;
-    }
-    .main-container {
-      margin-top: 10%;
-      margin-left: 10%;
-      margin-right: 10%;
-      width: 80%;
-    }
-    .target {
-      font-size: 3rem;
-    }
-    .answer,
-    .answer-dimmed {
-      padding-top: 2.5rem;
-      padding-bottom: 3rem;
-      font-size: 2.5rem;
-    }
-    .answered-correctly.no-click {
-      padding-bottom: 100%;
-      font-size: 3rem;
+  @media (min-width: 1024px) {
+    @media (max-height: 768px) {
+      /* @media (min-width: 2048px) { */
+      /* @media (max-height: 1536px) { */
+      /* @media (max-height: 768px) and (-webkit-device-pixel-ratio: 2) { */
+      /* .question-card {
+        padding-bottom: 0;
+      } */
+      .mc-container {
+        margin-top: 5%;
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 80%;
+      }
+      .target {
+        font-size: 3rem;
+      }
+      .answer,
+      .answer-dimmed {
+        padding-top: 2.5rem;
+        padding-bottom: 3rem;
+        font-size: 2.5rem;
+        /* color: red; */
+      }
+      .answered-correctly.no-click {
+        padding-bottom: 100%;
+        font-size: 3rem;
+      }
     }
   }
 
   /* ipad pro */
-  @media (min-device-width: 1366px) {
-    .question-card {
-      padding-bottom: 0;
-    }
-    .main-container {
-      margin-top: 10%;
-      margin-left: 10%;
-      margin-right: 10%;
-      width: 80%;
-    }
-    .target {
-      font-size: 3.5rem;
-    }
-    .answer,
-    .answer-dimmed {
-      padding-top: 3rem;
-      padding-bottom: 3rem;
-      font-size: 3rem;
-    }
-    .answered-correctly.no-click {
-      padding-bottom: 82%;
-      font-size: 3rem;
+  @media (min-width: 1366px) {
+    @media (max-height: 768px) {
+      .question-card {
+        padding-bottom: 0;
+      }
+      .mc-container {
+        margin-top: 10%;
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 80%;
+      }
+      .target {
+        font-size: 3.5rem;
+      }
+      .answer,
+      .answer-dimmed {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        font-size: 3rem;
+      }
+      .answered-correctly.no-click {
+        padding-bottom: 82%;
+        font-size: 3rem;
+      }
     }
   }
-}
 
-/* pc chromebook */
-/* @media only screen and (min-device-width: 1200px) { */
-@media only screen and (min-device-width: 1200px) {
-  @media (max-device-height: 800px) {
-    .main-container {
-      margin-top: 10%;
-      margin-left: 10%;
-      margin-right: 10%;
-      width: 80%;
-    }
-    .question-card {
-      padding-bottom: 0;
-    }
+  /* pc chromebook **********************************************************************************************************/
+  /* @media only screen and (min-width: 1200px) { */
+  @media only screen and (min-width: 1200px) {
+    @media (max-height: 800px) {
+      .mc-container {
+        margin-top: 10%;
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 80%;
+      }
+      .question-card {
+        padding-bottom: 0;
+      }
 
-    .target {
-      font-size: 3.5rem;
-    }
+      .target {
+        font-size: 3.5rem;
+      }
 
-    .answer,
-    .answer-dimmed {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-      font-size: 2rem;
+      .answer,
+      .answer-dimmed {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        font-size: 2rem;
+      }
+      .answered-correctly.no-click {
+        padding-bottom: 55%;
+        font-size: 3.5rem;
+      }
     }
-    .answered-correctly.no-click {
-      padding-bottom: 55%;
-      font-size: 3rem;
+  }
+
+  /* macbook air 11 */
+  @media only screen and (min-width: 1366px) {
+    @media (max-height: 1024px) {
+      .mc-container {
+        margin-top: 10%;
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 80%;
+      }
+      .question-card {
+        padding-bottom: 0;
+      }
+
+      .target {
+        font-size: 3.5rem;
+      }
+
+      .answer,
+      .answer-dimmed {
+        padding-top: 2.5rem;
+        padding-bottom: 3rem;
+        font-size: 3rem;
+        /* color: goldenrod; */
+      }
+      .answered-correctly.no-click {
+        padding-bottom: 75%;
+        font-size: 3.5rem;
+      }
     }
   }
 }

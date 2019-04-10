@@ -27,7 +27,7 @@ export class MultipleChoice {
     console.log("Component did update");
     console.log("isMobileDevice", this.isMobileDevice());
 
-    this.resetHiddenClasses();
+    // this.resetHiddenClasses();
   }
 
   getNextQuestion() {
@@ -131,9 +131,7 @@ export class MultipleChoice {
     return [
       <div class="section-title" />,
       <div class={this.dimBackground ? "cover-dimmed" : "cover"} />,
-      <div
-        class={this.dimBackground ? "main-container-dimmed" : "main-container"}
-      >
+      <div class={this.dimBackground ? "mc-container-dimmed" : "mc-container"}>
         {this.questions.map(item => (
           <div class="question-card">
             <div class="target-box">
