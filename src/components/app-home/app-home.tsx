@@ -21,8 +21,13 @@ export class AppHome {
   @Prop() moreIcon = "assets/svg/baseline-more_vert-24px.svg";
   @State() activeTab = "vocabulary";
   @State() dimBackground = false;
+  @State() hideFab = false;
   @State() lessonNumber = "16";
 
+  @Listen("toggleFab")
+  toggleFab(event) {
+    this.hideFab = event.detail;
+  }
   @Listen("fabMenuItemSelected")
   handleFabMenu(event: CustomEvent) {
     console.log("Received the custom todoCompleted event: ", event.detail);
@@ -52,8 +57,9 @@ export class AppHome {
     console.log("dimming2", this.dimBackground);
   }
 
-  showOptions() {
+  showOptions(event) {
     console.log("here in show options");
+    event.stopImmediatePropagation();
   }
 
   recordClick(event) {
@@ -146,8 +152,8 @@ export class AppHome {
         onMouseLeave={() => this.toggleDimBackround()}
         // onClick={() => this.toggleDimBackround()}
         class="fab disable-select"
-        hidden={this.hideMenuBars ? true : false}
-        onClick={() => this.showOptions()}
+        hidden={this.hideFab || this.hideMenuBars ? true : false}
+        onClick={event => this.showOptions(event)}
       >
         <span class="fab-action-button">
           {/* <i class="fab-action-button__icon filter-white" /> */}

@@ -1,4 +1,4 @@
-import { Component, Prop, State } from "@stencil/core";
+import { Component, Prop, State, Event, EventEmitter } from "@stencil/core";
 import { wordList } from "../../../assets/data/vocabulary";
 import { shuffle } from "../../../global/utilities";
 
@@ -8,6 +8,7 @@ import { shuffle } from "../../../global/utilities";
   shadow: true
 })
 export class MultipleChoice {
+  @Event() toggleFab: EventEmitter<any>;
   @Prop() vocabulary = wordList;
   @State() currentWord = 0;
   @Prop({ mutable: true }) questions: any[];
@@ -56,6 +57,7 @@ export class MultipleChoice {
     }
     allAnswers = shuffle(allAnswers);
     this.currentWord += 1;
+    this.toggleFab.emit(false);
   }
 
   handleWrongAnswer(event) {
@@ -86,6 +88,7 @@ export class MultipleChoice {
 
   async handleRightAnswer(event) {
     console.log("in handleRightAnswer", event);
+    this.toggleFab.emit(true);
 
     let thisElement = event.srcElement;
     this.answerBox = event.srcElement.parentElement;
@@ -114,7 +117,8 @@ export class MultipleChoice {
   resetHiddenClasses() {
     console.log("in resetHiddenClasses", this.answerBox);
     if (this.answerBox) {
-      let answers = this.answerBox.getElementsByClassName("wrong");
+      // let answers = this.answerBox.getElementsByClassName("wrong");
+      let answers = this.answerBox.getElementsByClassName("answer");
       for (let index = 0; index < answers.length; index++) {
         answers[index].classList.remove("wrong-answer-is-hidden");
       }
@@ -146,7 +150,7 @@ export class MultipleChoice {
                   class={
                     answer.correct == "right"
                       ? "answer answered-correctly no-click-is-hidden no-click"
-                      : "always-hidden}"
+                      : "always-hidden"
                   }
                 >
                   {answer.correct == "right" ? answer.details.word : ""}
