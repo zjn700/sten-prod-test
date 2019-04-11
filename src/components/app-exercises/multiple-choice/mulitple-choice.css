@@ -24,9 +24,9 @@ body {
 }
 .mc-container {
   --answer-font-size: 2rem;
-  --target-font-size: 2rem;
+  --target-font-size: 3rem;
   --answer-padding: 2rem;
-  --no-click-padding: 2rem;
+  --no-click-padding: 1.6rem;
 
   --ipad-margin-top: 12%;
   --ipad-margin-left: 15%;
@@ -311,9 +311,9 @@ body {
 
 /* landscape ***********************************************************************************************/
 @media only screen and (orientation: landscape) {
-  :root {
+  /* :root {
     --answer-font-size: 40px;
-  }
+  } */
 
   .mc-container {
     margin-top: 5%;
@@ -338,39 +338,15 @@ body {
   .target,
   .target-dimmed {
     padding-bottom: 0;
-    /* color: goldenrod; */
   }
   .answer-box {
     width: 50%;
   }
-  /* .answered-correctly.no-click {
-    padding-bottom: 62%;
-  } */
 
   /* iphone 5 */
   @media (min-width: 568px) {
     @media (max-height: 320px) {
       /* and (-webkit-device-pixel-ratio: 2) */
-      /* .mc-container {
-        margin-top: 5%;
-      }
-
-      .question-card {
-        padding-bottom: 0;
-      }
-      .target,
-      .target-dimmed {
-        padding-bottom: 0;
-      }
-      .answer,
-      .answer-dimmed {
-        padding-top: 0.7rem;
-        padding-bottom: 0.8rem;
-        font-size: var(--answer-font-size, 1.5rem);
-      }
-      .answered-correctly.no-click {
-        padding-bottom: 65%;
-      } */
       .mc-container {
         margin-top: 0;
       }
@@ -399,18 +375,6 @@ body {
     @media (max-height: 360px) {
       /* and (max-height: 375px) and (orientation: landscape) 
       and (-webkit-device-pixel-ratio: 2)*/
-      /* .mc-container {
-        margin-top: 5%;
-      }
-      .answer,
-      .answer-dimmed {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        font-size: 1.6rem;
-      }
-      .answered-correctly.no-click {
-        padding-bottom: 70%;
-      } */
       .mc-container {
         margin-top: 0;
       }
@@ -438,18 +402,6 @@ body {
     @media (max-height: 375px) {
       /* and (max-height: 375px) and (orientation: landscape) 
       and (-webkit-device-pixel-ratio: 2) */
-      /* .mc-container {
-        margin-top: 5%;
-      }
-      .answer,
-      .answer-dimmed {
-        padding-top: 1.1rem;
-        padding-bottom: 1.2rem;
-        font-size: 1.7rem;
-      }
-      .answered-correctly.no-click {
-        padding-bottom: 75%;
-      } */
       .mc-container {
         margin-top: 0;
       }
@@ -476,18 +428,6 @@ body {
   @media (min-width: 736px) {
     @media (max-height: 414px) {
       /* @media (max-height: 414px) and (-webkit-device-pixel-ratio: 2) { */
-      /* .mc-container {
-        margin-top: 5%;
-      } */
-      /* .answer,
-      .answer-dimmed {
-        padding-top: 1.4rem;
-        padding-bottom: 1.4rem;
-        font-size: 1.8rem;
-      } */
-      /* .answered-correctly.no-click {
-        padding-bottom: 75%;
-      } */
       .mc-container {
         margin-top: 0;
       }
@@ -515,18 +455,6 @@ body {
     @media (max-height: 375px) {
       /* and (max-height: 375px) and (orientation: landscape) 
       and (-webkit-device-pixel-ratio: 3) */
-      /* .mc-container {
-        margin-top: 5%;
-      }
-      .answer,
-      .answer-dimmed {
-        padding-top: 1.1rem;
-        padding-bottom: 1.1rem;
-        font-size: 1.5rem;
-      }
-      .answered-correctly.no-click {
-        padding-bottom: 53%;
-      } */
       .mc-container {
         margin-top: 0;
       }
@@ -553,20 +481,9 @@ body {
   /* @media (min-width: 731px) and (device-aspect-ratio: 2/1) { */
   @media (min-width: 731px) {
     @media (min-height: 411px) {
-      /* .mc-container {
-        margin-top: 5%;
-      }
-      .answer,
-      .answer-dimmed {
-        padding-top: 1.3rem;
-        padding-bottom: 1.3rem;
-        font-size: 1.6rem;
-      }
-      .answered-correctly.no-click {
-        padding-bottom: 72%;
-      } */
       .mc-container {
-        margin-top: 5%;
+        /* margin-top: 5%; */
+        margin-top: 0;
       }
       .question-card {
         margin-top: calc(var(--answer-padding, 2rem) * 1.5);
@@ -590,18 +507,6 @@ body {
   /* pixel 2 xl */
   @media (min-width: 823px) {
     @media (max-height: 411px) {
-      /* .mc-container {
-        margin-top: 5%;
-      }
-      .answer,
-      .answer-dimmed {
-        padding-top: 1.3rem;
-        padding-bottom: 1.3rem;
-      }
-      .answered-correctly.no-click {
-        padding-bottom: 48%;
-      } */
-
       .mc-container {
         margin-top: 0;
       }
@@ -627,31 +532,6 @@ body {
   /* ipad */
   @media (min-width: 1024px) {
     @media (max-height: 768px) {
-      /* @media (min-width: 2048px) { */
-      /* @media (max-height: 1536px) { */
-      /* @media (max-height: 768px) and (-webkit-device-pixel-ratio: 2) { */
-      /* .question-card {
-        padding-bottom: 0;
-      } */
-      /* .mc-container {
-        margin-top: 5%;
-        margin-left: 10%;
-        margin-right: 10%;
-        width: 80%;
-      }
-      .target {
-        font-size: 3rem;
-      }
-      .answer,
-      .answer-dimmed {
-        padding-top: 2.5rem;
-        padding-bottom: 3rem;
-        font-size: 2.5rem;
-      }
-      .answered-correctly.no-click {
-        padding-bottom: 100%;
-        font-size: 3rem;
-      } */
       .mc-container {
         margin-top: var(--ipad-margin-top, 12%);
         margin-left: calc(var(--ipad-margin-left, 15%) * 0.7);
@@ -662,14 +542,14 @@ body {
       .answer-dimmed {
         padding-top: calc(var(--answer-padding, 1rem) * 0.75);
         padding-bottom: calc(var(--answer-padding, 1rem) * 0.75);
-        font-size: calc(var(--answer-font-size, 2rem) * 1.3);
+        font-size: calc(var(--answer-font-size, 2rem) * 1.2);
       }
       .target {
-        font-size: calc(var(--target-font-size, 2rem) * 1.7);
+        font-size: calc(var(--target-font-size, 2rem) * 1.6);
       }
       .answered-correctly.no-click {
-        padding-bottom: calc(var(--no-click-padding, 2rem) * 7.25);
-        font-size: calc(var(--target-font-size, 2rem) * 1.7);
+        padding-bottom: calc(var(--no-click-padding, 2rem) * 8.25);
+        font-size: calc(var(--target-font-size, 2rem) * 1.6);
       }
     }
   }
@@ -677,27 +557,25 @@ body {
   /* ipad pro */
   @media (min-width: 1366px) {
     @media (max-height: 768px) {
-      .question-card {
-        padding-bottom: 0;
-      }
       .mc-container {
-        margin-top: 10%;
-        margin-left: 10%;
-        margin-right: 10%;
-        width: 80%;
-      }
-      .target {
-        font-size: 3.5rem;
+        margin-top: var(--ipad-margin-top, 12%);
+        margin-left: calc(var(--ipad-margin-left, 15%) * 0.7);
+        margin-right: calc(var(--ipad-margin-right, 15%) * 0.7);
+        width: calc(var(--ipad-width, 70%) * 1.15);
       }
       .answer,
       .answer-dimmed {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-        font-size: 3rem;
+        padding-top: calc(var(--answer-padding, 1rem) * 0.75);
+        padding-bottom: calc(var(--answer-padding, 1rem) * 0.75);
+        font-size: calc(var(--answer-font-size, 2rem) * 1.6);
+      }
+      .target {
+        font-size: calc(var(--target-font-size, 2rem) * 1.9);
+        color: red;
       }
       .answered-correctly.no-click {
-        padding-bottom: 82%;
-        font-size: 3rem;
+        padding-bottom: calc(var(--no-click-padding, 2rem) * 12.25);
+        font-size: calc(var(--target-font-size, 2rem) * 1.9);
       }
     }
   }
@@ -707,7 +585,7 @@ body {
   @media only screen and (min-width: 1200px) {
     @media (max-height: 800px) {
       .mc-container {
-        margin-top: 10%;
+        margin-top: 8%;
         margin-left: 10%;
         margin-right: 10%;
         width: 80%;
@@ -718,17 +596,24 @@ body {
 
       .target {
         font-size: 3.5rem;
+        font-size: calc(var(--target-font-size, 2rem) * 1.6);
       }
 
       .answer,
       .answer-dimmed {
         padding-top: 2rem;
         padding-bottom: 2rem;
+        padding-top: calc(var(--answer-padding, 1rem) * 0.75);
+        padding-bottom: calc(var(--answer-padding, 1rem) * 0.75);
         font-size: 2rem;
+        font-size: calc(var(--answer-font-size, 2rem) * 1.4);
       }
       .answered-correctly.no-click {
         padding-bottom: 55%;
+        padding-bottom: calc(var(--no-click-padding, 2rem) * 10.25);
+
         font-size: 3.5rem;
+        font-size: calc(var(--target-font-size, 2rem) * 1.6);
       }
     }
   }
@@ -745,21 +630,25 @@ body {
       .question-card {
         padding-bottom: 0;
       }
-
       .target {
         font-size: 3.5rem;
+        font-size: calc(var(--target-font-size, 2rem) * 1.6);
       }
-
       .answer,
       .answer-dimmed {
         padding-top: 2.5rem;
         padding-bottom: 3rem;
+        padding-top: calc(var(--answer-padding, 1rem) * 1.25);
+        padding-bottom: calc(var(--answer-padding, 1rem) * 1.25);
         font-size: 3rem;
-        /* color: goldenrod; */
+        font-size: calc(var(--answer-font-size, 2rem) * 1.4);
       }
       .answered-correctly.no-click {
         padding-bottom: 75%;
+        padding-bottom: calc(var(--no-click-padding, 2rem) * 12.5);
+
         font-size: 3.5rem;
+        font-size: calc(var(--target-font-size, 2rem) * 1.6);
       }
     }
   }
